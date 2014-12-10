@@ -11,7 +11,7 @@ dir=~/homedir/dotfiles         # dotfiles directory
 olddir=~/homedir/dotfiles_old  # old dotfiles backup directory
 
 # list of files/folders to symlink in homedir
-dotfiles="bashrc bash_profile gitconfig"
+dotfiles="bashrc bash_profile bazaar gitconfig"
 
 # create dotfiles_old in homedir
 echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
