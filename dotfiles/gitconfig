@@ -1,0 +1,17 @@
+[user]
+    name = David Lawrence
+    email = dkl@mozilla.com
+[core]
+    editor = vim
+[merge]
+    tool = vimdiff
+[url "ssh://gitolite3@git.mozilla.org/"]
+    pushInsteadOf = https://git.mozilla.org/
+[alias]
+    graph = log --graph --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset'
+    update = pull --rebase
+[push]
+    default = simple
+[color]
+    ui = auto
+
