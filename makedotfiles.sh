@@ -31,5 +31,4 @@ for file in $dotfiles; do
     mv ~/.$file $olddir/
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
-    source ~/.$file
 done
