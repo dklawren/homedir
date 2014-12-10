@@ -30,4 +30,6 @@ alias dropbox=/home/dkl/bin/dropbox.py
 alias d=docker
 
 # If perlbrew is installed
-source ~/perl5/perlbrew/etc/bashrc
+if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
+    source ~/perl5/perlbrew/etc/bashrc
+fi
