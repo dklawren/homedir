@@ -28,7 +28,7 @@ alias cdiff='cvs -q diff -uN'
 alias cstat='cvs -q status -v'
 alias dropbox=/home/dkl/bin/dropbox.py
 alias d=docker
-alias gup=git stash; git pull --rebase; git stash pop
+alias gup='git stash; git pull --rebase; git stash pop'
 
 # If perlbrew is installed
 if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
