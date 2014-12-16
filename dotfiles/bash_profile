@@ -7,7 +7,7 @@ fi
 
 # User specific environment and startup programs
 export PATH=$PATH:/opt/local/bin:$HOME/.local/bin:$HOME/bin:$HOME/devel/bin:$HOME/devel/android-sdk-linux/platform-tools:/usr/share/tex4ht
-export TERM=xterm
+export TERM=xterm-256color
 export COLORTERM=gnome-terminal
 export CVSROOT=:ext:dlawrence%mozilla.com@cvs.mozilla.org:/cvsroot
 export JADE_PUB=/usr/share/sgml
