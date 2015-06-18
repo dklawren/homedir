@@ -28,6 +28,7 @@ alias cdiff='cvs -q diff -uN'
 alias cstat='cvs -q status -v'
 alias dropbox=/home/dkl/bin/dropbox.py
 alias d=docker
+alias dexec='docker exec -it'
 if [ -e /usr/bin/docker-compose ]; then
     alias fig=docker-compose
 fi
