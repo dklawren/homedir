@@ -14,3 +14,4 @@ export CVSROOT=:ext:dlawrence%mozilla.com@cvs.mozilla.org:/cvsroot
 export JADE_PUB=/usr/share/sgml
 export LDP_HOME=/usr/share/sgml/docbook/dsssl-stylesheets-1.79/dtds/decls
 export DOCKER_HOST=fedora:2375
+export PATH="/usr/local/sbin:$PATH"
