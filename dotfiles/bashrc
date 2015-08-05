@@ -16,6 +16,8 @@ export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 # Aliases
+alias l.='ls -d .*'
+alias ll='ls -l'
 alias vi='vim -O'
 alias bdiff='bzr diff'
 alias bstat='bzr status -S | grep -v ^\?'
