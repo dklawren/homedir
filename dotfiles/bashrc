@@ -32,6 +32,7 @@ if [ -e /usr/bin/docker-compose ]; then
     alias fig=docker-compose
 fi
 alias dcomp=docker-compose
+alias dmach=docker-machine
 alias g=git
 alias gup='git stash; git pull --rebase; git stash pop'
 alias gstat='git status'
