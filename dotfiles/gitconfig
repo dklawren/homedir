@@ -12,6 +12,9 @@
     editor = vim
 [merge]
     tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+    prompt = false
 [url "ssh://gitolite3@git.mozilla.org/"]
     pushInsteadOf = https://git.mozilla.org/
 [alias]
