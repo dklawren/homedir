@@ -11,7 +11,7 @@ dir=~/homedir/dotfiles         # dotfiles directory
 olddir=~/homedir/dotfiles_old  # old dotfiles backup directory
 
 # list of files/folders to symlink in homedir
-dotfiles="aliases bashrc bash_profile bash_prompt bazaar exports functions gitconfig gitignore helpers osx path"
+dotfiles="aliases bashrc bash_profile bash_prompt bazaar dockerfunc exports functions gitconfig gitignore helpers osx path"
 
 # create dotfiles_old in homedir
 echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
