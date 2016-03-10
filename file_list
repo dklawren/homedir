@@ -1,0 +1,16 @@
+.aliases
+.bashrc
+.bash_profile
+.bash_prompt
+.bazaar
+.dockerfunc
+.exports
+.functions
+.gitconfig
+.gitignore
+.helpers
+.osx
+.path
+.config/i3/config
+.config/i3/status.conf
+.config/dunst/dunstrc
