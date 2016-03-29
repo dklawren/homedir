@@ -100,10 +100,10 @@ bindsym $mod+a focus parent
 
 set $workspace1 "1: Email"
 set $workspace2 "2: Web"
-set $workspace3 "3: Terminal"
-set $workspace4 "4: Media"
-set $workspace5 "5: Vidyo"
-set $workspace6 "6"
+set $workspace3 "3: Media"
+set $workspace4 "4: Vidyo"
+set $workspace5 "5: Terminal"
+set $workspace6 "6: Editor"
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
@@ -202,15 +202,17 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -p "Start:" -
 assign [class="Thunderbird"] $workspace1
 assign [class="Firefox"] $workspace2
 assign [class="google-chrome-*"] $workspace2
-assign [class="Gnome-terminal"] $workspace3
-assign [class="Rhythmbox"] $workspace4
-assign [class="VidyoDesktop*"] $workspace5
+assign [class="Rhythmbox"] $workspace3
+assign [class="VidyoDesktop*"] $workspace4
+assign [class="Gnome-terminal"] $workspace5
+assign [class="Atom"] $workspace6
 
 workspace $workspace1 output HDMI2
 workspace $workspace2 output HDMI2
-workspace $workspace3 output VGA1
-workspace $workspace4 output VGA1
+workspace $workspace3 output HDMI2
+workspace $workspace4 output HDMI2
 workspace $workspace5 output VGA1
+workspace $workspace6 output VGA1
 
 # Custom window settings
 for_window [class="Nautilus"] floating enable
@@ -231,6 +233,7 @@ exec thunderbird
 exec firefox
 exec gnome-terminal
 exec rhythmbox
+exec atom
 
 # audio controls
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
@@ -239,5 +242,5 @@ bindsym XF86AudioMute exec amixer -q sset Master toggle
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl prev
+bindsym XF86AudioPrev exec playerctl previous
 
