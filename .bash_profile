@@ -34,7 +34,7 @@ fi
 
 # Docker machine
 if [ "$(uname)" == "Darwin" ]; then
-    eval "$(docker-machine env docker)"
+    eval "$(docker-machine env work)"
 fi
 
 # Load the shell dotfiles, and then some:
@@ -44,3 +44,5 @@ for file in ~/.{bash_prompt,aliases,dockerfunc,functions,helpers,path,extra,expo
     [[ -r "$file" ]] && [[ -f "$file" ]] && source "$file"
 done
 unset file
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
