@@ -37,6 +37,11 @@ if [ "$(uname)" == "Darwin" ]; then
     eval "$(docker-machine env work)"
 fi
 
+# Docker environment config for windows
+if [ "$(hostname)" == "WINDOWS"  ]; then
+    export DOCKER_HOST=tcp://127.0.0.1:2375
+fi
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
