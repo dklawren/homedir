@@ -18,6 +18,9 @@
 [url "ssh://gitolite3@git.mozilla.org/"]
     pushInsteadOf = https://git.mozilla.org/
 [alias]
+    # working with pull requests
+    pr  = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1;  }; f"
+    pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
     # View abbreviated SHA, description, and history graph of the latest 20 commits
     l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     # View the current working tree status using the short format
