@@ -30,6 +30,7 @@ alias g=git
 alias gup='git stash; git pull --rebase; git stash pop'
 alias gstat='git status'
 alias gdiff='git diff'
+alias tmux="tmux -2"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

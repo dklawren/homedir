@@ -1,8 +1,11 @@
 .aliases
-.bashrc
 .bash_profile
 .bash_prompt
+.bashrc
 .bazaar
+.config/dunst/dunstrc
+.config/i3/config
+.config/i3/status.conf
 .dockerfunc
 .exports
 .functions
@@ -12,6 +15,4 @@
 .inputrc
 .osx
 .path
-.config/i3/config
-.config/i3/status.conf
-.config/dunst/dunstrc
+.tmux.conf
