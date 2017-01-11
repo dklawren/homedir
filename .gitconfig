@@ -112,3 +112,7 @@
     user = dklawren
 [credential]
 	helper = osxkeychain
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
