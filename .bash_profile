@@ -33,9 +33,9 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Docker machine
-if [ "$(uname)" == "Darwin" ]; then
-    eval "$(docker-machine env work)"
-fi
+#if [ "$(uname)" == "Darwin" ]; then
+#    eval "$(docker-machine env work)"
+#fi
 
 # Docker environment config for windows
 if [ "$(hostname)" == "WINDOWS"  ]; then
