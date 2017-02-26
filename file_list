@@ -12,6 +12,7 @@
 .gitconfig
 .gitignore
 .helpersa
+.hgrc
 .inputrc
 .osx
 .path
