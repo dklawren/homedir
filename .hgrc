@@ -1,0 +1,17 @@
+[ui]
+username = David Lawrence <dkl@mozilla.com>
+editor = vim
+merge = internal:merge3
+
+[alias]
+lg = log --template "{label('custom.rev', rev)}\t{label('custom.phase',phase)}\t{label('custom.tag',tags)}\t{desc|firstline} {label('custom.age', date|age)} {label('custom.user', author|user)}\n"
+
+[color]
+custom.rev = yellow
+custom.phase = bold
+custom.user = cyan
+custom.age = bold
+custom.tag = bold yellow
+
+[extensions]
+rebase=
