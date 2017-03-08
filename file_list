@@ -17,3 +17,4 @@
 .osx
 .path
 .tmux.conf
+bin/hg_prompt.py
