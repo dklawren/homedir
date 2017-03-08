@@ -5,13 +5,7 @@ merge = internal:merge3
 
 [alias]
 lg = log --template "{label('custom.rev', rev)}\t{label('custom.phase',phase)}\t{label('custom.tag',tags)}\t{desc|firstline} {label('custom.age', date|age)} {label('custom.user', author|user)}\n"
-
-[color]
-custom.rev = yellow
-custom.phase = bold
-custom.user = cyan
-custom.age = bold
-custom.tag = bold yellow
+wip = log --graph --rev=wip --template=wip
 
 [extensions]
 rebase=
@@ -22,3 +16,28 @@ progress=
 histedit=
 strip=
 shelve=
+
+[revsetalias]
+wip = (parents(not public()) or not public() or . or head()) and (not obsolete() or unstable()^) and not closed()
+
+[templates]
+wip = '{label("log.branch", ifeq(branch, "default", "", branch))} {label("changeset.{phase}", rev)} {label("grep.user", author|user)}{label("log.tag", if(tags," {tags}"))} {bookmarks % "{ifeq(bookmark, currentbookmark, label('log.activebookmark', bookmark), label('log.bookmark', bookmark))} "}\n{label(ifcontains(rev, revset('parents()'), 'desc.here'),desc|firstline)}'
+
+[color]
+mode=terminfo
+#Custom colours
+color.orange=202
+color.lightyellow=191
+color.darkorange=220
+color.brightyellow=226
+#Colours for each label
+log.branch=cyan
+log.summary=lightyellow
+log.description=lightyellow
+log.bookmark=green
+log.tag=darkorange
+log.activebookmark = green bold underline
+changeset.public=orange bold
+changeset.secret=blue bold
+changeset.draft=brightyellow bold
+desc.here=bold blue_background
