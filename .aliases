@@ -32,6 +32,16 @@ alias gstat='git status'
 alias gdiff='git diff'
 alias tmux="tmux -2"
 
+# Mercurial
+alias hup='hg pull -u'
+alias hstat='hg status'
+alias hdiff='hg diff'
+
+# Python3
+alias python='/usr/bin/python3'
+alias pip='/usr/bin/pip3'
+alias virtualenv='/usr/bin/py3-virtualenv'
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"
