@@ -51,3 +51,6 @@ done
 unset file
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# Python3 virtualenvwrapper
+source /usr/bin/virtualenvwrapper.sh
