@@ -1,4 +1,5 @@
 .aliases
+.bash_logout
 .bash_profile
 .bash_prompt
 .bashrc
