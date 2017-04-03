@@ -1,9 +1,15 @@
+export PATH=$PATH:/usr/local/bin
 export TERM=screen-256color
 export COLORTERM=screen-256color
 export JADE_PUB=/usr/share/sgml
 export LDP_HOME=/usr/share/sgml/docbook/dsssl-stylesheets-1.79/dtds/decls
 
 # Python3 virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv-3
+if [ "$(uname)" == "Darwin" ]; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+else
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv-3
+fi
 export WORKON_HOME=~/devel/virtualenvs
