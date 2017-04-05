@@ -5,11 +5,8 @@ export JADE_PUB=/usr/share/sgml
 export LDP_HOME=/usr/share/sgml/docbook/dsssl-stylesheets-1.79/dtds/decls
 
 # Python3 virtualenvwrapper
-if [ "$(uname)" == "Darwin" ]; then
-    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-else
+if [ "$(uname)" == "Linux" ]; then
     export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv-3
+    export WORKON_HOME=~/devel/virtualenvs
 fi
-export WORKON_HOME=~/devel/virtualenvs

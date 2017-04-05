@@ -53,4 +53,6 @@ unset file
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # Python3 virtualenvwrapper
-source $(which virtualenvwrapper.sh)
+if [ "$(uname)" == "Linux" ]; then
+    source $(which virtualenvwrapper.sh)
+fi
