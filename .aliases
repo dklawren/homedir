@@ -43,6 +43,10 @@ alias hup='hg pull -u'
 alias hstat='hg status'
 alias hdiff='hg diff'
 
+if [ "$(uname)" == "Darwin"  ]; then
+    alias top='top -o cpu'
+fi
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"
