@@ -5,9 +5,9 @@ if [ ! -e "/usr/bin/cpanm" ]; then
     if [ "$(uname)" == "Darwin" ]; then
         brew install wget
     else
-        sudo yum install wget
+        sudo yum install wget 'perl(ExtUtils::Manifest)' 'perl(ExtUtils::MakeMaker)'
     fi
-    sudo wget https://raw.githubusercontent.com/miyagawa/cpanminus/master/cpanm -o /usr/bin/cpanm
+    sudo wget https://raw.githubusercontent.com/miyagawa/cpanminus/master/cpanm -O /usr/bin/cpanm
     sudo chmod 755 /usr/bin/cpanm
 fi
 
@@ -40,6 +40,8 @@ if [ ! -e "$HOME/bugzilla-dev-manager" ]; then
     ln -sf $HOME/bugzilla-dev-manager/bz-command $HOME/bin/bz
     sudo cp $HOME/bugzilla-dev-manager/bz-dev.conf-sample /etc/bz-dev.conf
 fi
+
+sudo pip install jedi
 
 # Vim configuration
 if [ ! -e "$HOME/.vim" ]; then
