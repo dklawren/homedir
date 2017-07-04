@@ -20,6 +20,7 @@ alias l.='ls -d .*'
 alias ll='ls -l'
 alias vi='vim'
 alias tmux="tmux -2"
+alias dmux="ssh -t docker tmux new -A"
 
 # Bazaar
 alias bdiff='bzr diff'
