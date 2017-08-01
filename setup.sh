@@ -2,11 +2,7 @@
 
 # Global Perl dependencies
 if [ ! -e "/usr/bin/cpanm" ]; then
-    if [ "$(uname)" == "Darwin" ]; then
-        brew install wget
-    else
-        sudo yum install wget 'perl(ExtUtils::Manifest)' 'perl(ExtUtils::MakeMaker)'
-    fi
+    sudo yum install wget 'perl(ExtUtils::Manifest)' 'perl(ExtUtils::MakeMaker)'
     sudo wget https://raw.githubusercontent.com/miyagawa/cpanminus/master/cpanm -O /usr/bin/cpanm
     sudo chmod 755 /usr/bin/cpanm
 fi

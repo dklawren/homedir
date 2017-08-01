@@ -7,7 +7,6 @@
 .config/dunst/dunstrc
 .config/i3/config
 .config/i3/status.conf
-.dockerfunc
 .exports
 .functions
 .gitconfig
@@ -15,7 +14,6 @@
 .helpersa
 .hgrc
 .inputrc
-.osx
 .path
 .tmux.conf
 bin/hg_prompt.py
