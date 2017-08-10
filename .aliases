@@ -44,6 +44,11 @@ alias hup='hg pull -u'
 alias hstat='hg status'
 alias hdiff='hg diff'
 
+# Python
+alias ve='virtualenv-3.6 ./venv'
+alias ae='deactivate &> /dev/null; source ./venv/bin/activate'
+alias de='deactivate'
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"

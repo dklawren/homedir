@@ -3,6 +3,7 @@ export TERM=screen-256color
 export COLORTERM=screen-256color
 export JADE_PUB=/usr/share/sgml
 export LDP_HOME=/usr/share/sgml/docbook/dsssl-stylesheets-1.79/dtds/decls
+export EDITOR=vim
 
 # Python3 virtualenvwrapper
 if [ "$(uname)" == "Linux" ]; then
