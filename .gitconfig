@@ -10,6 +10,7 @@
     # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
     trustctime = false
     editor = vim
+    excludesfile = /home/dkl/.gitignore
 [merge]
     tool = vimdiff
     conflictstyle = diff3
