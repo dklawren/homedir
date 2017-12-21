@@ -40,4 +40,7 @@ unset file
 #    source $(which virtualenvwrapper.sh)
 #fi
 
+# https://github.com/github/hub
+eval "$(hub alias -s)"
+
 cd $HOME
