@@ -24,7 +24,8 @@ fi
 
 # Docker environment config for windows
 if [ "$(hostname)" == "Windows" ] || [ "$(hostname)" == "DKL-LAPTOP"  ]; then
-    export DOCKER_HOST=tcp://192.168.2.2:2375
+    #export DOCKER_HOST=tcp://192.168.2.2:2375
+    export DOCKER_HOST=tcp://localhost:2375
 fi
 
 # Load the shell dotfiles, and then some:
