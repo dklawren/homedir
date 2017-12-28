@@ -12,3 +12,6 @@ if [ "$(uname)" == "Linux" ]; then
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv-3
     export WORKON_HOME=~/devel/virtualenvs
 fi
+
+export DISPLAY=0:0
+export LIBGL_ALWAYS_INDIRECT=1
