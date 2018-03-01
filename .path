@@ -1,2 +1,2 @@
 export PATH=$PATH:/opt/local/bin:$HOME/.local/bin:$HOME/bin:$HOME/devel/bin:$HOME/devel/repos/github/dklawren/bugzilla-dev-manager
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH:/usr/local/go/bin"
