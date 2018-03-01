@@ -23,6 +23,10 @@
     ~/.path: .path
     ~/.tmux.conf: .tmux.conf
     ~/bin/hg_prompt.py: bin/hg_prompt.py
+    ~/.tmux/plugins/tpm:
+      create: true
+      path: tpm
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - ~/.tmux/plugins/tpm/bin/install_plugins
