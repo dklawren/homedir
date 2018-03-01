@@ -1,3 +1,5 @@
+set -e
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
@@ -23,10 +25,9 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Docker environment config for windows
-if [ "$(hostname)" == "Windows" ] || [ "$(hostname)" == "DKL-LAPTOP"  ]; then
-    #export DOCKER_HOST=tcp://192.168.2.2:2375
+if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
     export DOCKER_HOST=tcp://localhost:2375
-fi
+#fi
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -36,12 +37,7 @@ for file in ~/.{bash_prompt,aliases,functions,helpers,path,exports}; do
 done
 unset file
 
-# Python3 virtualenvwrapper
-#if [ "$(uname)" == "Linux" ]; then
-#    source $(which virtualenvwrapper.sh)
-#fi
-
-# https://github.com/github/hub
-eval "$(hub alias -s)"
+sudo mkdir -p /c
+sudo mount -o bind /mnt/c /c
 
 cd $HOME

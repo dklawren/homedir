@@ -1,0 +1,28 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.aliases: .aliases
+    ~/.bash_logout: .bash_logout
+    ~/.bash_profile: .bash_profile
+    ~/.bash_prompt: .bash_prompt
+    ~/.bashrc: .bashrc
+    ~/.config/dunst/dunstrc: .config/dunst/dunstrc
+    ~/.config/i3/config: .config/i3/config
+    ~/.config/i3/status.conf: .config/i3/status.conf
+    ~/.exports: .exports
+    ~/.functions: .functions
+    ~/.gitconfig: .gitconfig
+    ~/.gitignore: .gitignore
+    ~/.helpers: .helpers
+    ~/.hgrc: .hgrc
+    ~/.inputrc: .inputrc
+    ~/.path: .path
+    ~/.tmux.conf: .tmux.conf
+    ~/bin/hg_prompt.py: bin/hg_prompt.py
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
