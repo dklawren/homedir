@@ -1,5 +1,3 @@
-set -e
-
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
@@ -25,9 +23,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Docker environment config for windows
-if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
-    export DOCKER_HOST=tcp://localhost:2375
-#fi
+export DOCKER_HOST=tcp://localhost:2375
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
