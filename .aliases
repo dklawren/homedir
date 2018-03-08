@@ -29,7 +29,7 @@ alias bup='bzr update'
 
 # Docker
 alias d=docker
-alias dexec='docker exec -it'
+alias dexec='docker -H unix:///var/run/docker.sock exec -it'
 alias dcomp=docker-compose
 alias dmach=docker-machine
 
