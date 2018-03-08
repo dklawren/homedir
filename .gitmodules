@@ -4,3 +4,6 @@
 [submodule "tpm"]
 	path = tpm
 	url = https://github.com/tmux-plugins/tpm.git
+[submodule "dotvim"]
+	path = dotvim
+	url = https://github.com/dklawren/dotvim
