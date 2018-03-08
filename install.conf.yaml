@@ -22,11 +22,19 @@
     ~/.inputrc: .inputrc
     ~/.path: .path
     ~/.tmux.conf: .tmux.conf
-    ~/bin/hg_prompt.py: bin/hg_prompt.py
+    ~/bin/hg_prompt.py:
+      create: true
+      path: bin/hg_prompt.py
+    ~/bin/docker-relay:
+      create: true
+      path: bin/docker-relay
     ~/.tmux/plugins/tpm:
       create: true
       path: tpm
+    ~/.vim: dotvim
+    ~/.vimrc: dotvim/rc/vimrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - ~/.tmux/plugins/tpm/bin/install_plugins
+  - vim +PluginInstall +qall
