@@ -10,9 +10,6 @@
     ~/.bash_profile: .bash_profile
     ~/.bash_prompt: .bash_prompt
     ~/.bashrc: .bashrc
-    ~/.config/dunst/dunstrc: .config/dunst/dunstrc
-    ~/.config/i3/config: .config/i3/config
-    ~/.config/i3/status.conf: .config/i3/status.conf
     ~/.exports: .exports
     ~/.functions: .functions
     ~/.gitconfig: .gitconfig
