@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Environment variables you need to set so you don't have to edit the script below.
+DOCKER_CHANNEL=edge
+DOCKER_COMPOSE_VERSION=1.16.1
+
+# Update the apt package index.
+sudo apt-get update
+
+# Install packages to allow apt to use a repository over HTTPS.
+sudo apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+
+# Add Docker's official GPG key.
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# Verify the fingerprint.
+sudo apt-key fingerprint 0EBFCD88
+
+# Pick the release channel.
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   ${DOCKER_CHANNEL}"
+
+# Update the apt package index.
+sudo apt-get update
+
+# Install the latest version of Docker CE.
+sudo apt-get install -y docker-ce
+
+# Allow your user to access the Docker CLI without needing root.
+sudo usermod -aG docker $USER
+
+# Install Docker Compose.
+sudo curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose &&
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Download Go. You should change the version if there's a newer one. Check at: https://golang.org/dl/
+sudo wget https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
+
+# unzip Go
+sudo tar -C /usr/local -xzf go1.9.2.linux-amd64.tar.gz
+
+# Build
+go get -d github.com/jstarks/npiperelay
+GOOS=windows go build -o /mnt/c/Users/dklaw/go/bin/npiperelay.exe github.com/jstarks/npiperelay
+
+# We’ve now built the relay for Windows but we want it callable from within WSL.
+# To do this, we make a symlink. Make sure to replace with your Windows username:
+sudo ln -s /mnt/c/Users/dklaw/go/bin/npiperelay.exe /usr/local/bin/npiperelay.exe
+
+# We’ll be using socat to help enable the relay. Install socat, a tool that allows for
+# bidirectional flow of data between two points (more on this later). Grab this package:
+sudo apt install socat

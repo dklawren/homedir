@@ -19,12 +19,7 @@
     ~/.inputrc: .inputrc
     ~/.path: .path
     ~/.tmux.conf: .tmux.conf
-    ~/bin/hg_prompt.py:
-      create: true
-      path: bin/hg_prompt.py
-    ~/bin/docker-relay:
-      create: true
-      path: bin/docker-relay
+    ~/bin: bin
     ~/.tmux/plugins/tpm:
       create: true
       path: tpm
