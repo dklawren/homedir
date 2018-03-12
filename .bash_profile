@@ -34,7 +34,7 @@ done
 unset file
 
 sudo mkdir -p /c
-sudo mount -o bind /mnt/c /c
+[[ $(findmnt -M /c) ]] || sudo mount -o bind /mnt/c /c
 
 # ssh-agent configuration
 if [ -z "$(pgrep ssh-agent)"  ]; then
