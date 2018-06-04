@@ -18,8 +18,8 @@ progress =
 histedit =
 strip =
 shelve =
-prompt = ~/bin/hg_prompt.py
-reviewboard = ~/devel/repos/hg/version-control-tools/hgext/reviewboard/client.py
+#prompt = ~/bin/hg_prompt.py
+#reviewboard = ~/devel/repos/hg/version-control-tools/hgext/reviewboard/client.py
 #evolve = ~/devel/repos/hg/evolve/hgext/evolve.py
 fetch =
 
