@@ -6,6 +6,9 @@ export JADE_PUB=/usr/share/sgml
 export LDP_HOME=/usr/share/sgml/docbook/dsssl-stylesheets-1.79/dtds/decls
 export EDITOR=vim
 
+# make grep highlight results using color
+export GREP_OPTIONS='--color=auto'
+
 # Python3 virtualenvwrapper
 if [ "$(uname)" == "Linux" ]; then
     export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
