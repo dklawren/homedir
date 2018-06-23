@@ -1,3 +1,6 @@
+export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
+[ -z "$TMUX" ] && { tmux attach || exec tmux new-session && exit; }
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
