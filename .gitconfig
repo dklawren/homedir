@@ -118,4 +118,4 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 [cinnabar]
-	helper = /home/dkl/devel/repos/github/glandium/git-cinnabar/git-cinnabar-helper
+	helper = /c/Users/dklaw/Sync/devel/repos/github/glandium/git-cinnabar/git-cinnabar-helper
