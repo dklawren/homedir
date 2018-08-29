@@ -1,5 +1,14 @@
 export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
-[ -z "$TMUX" ] && { tmux attach || exec tmux new-session && exit; }
+if [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default && exit
+fi
+
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bindings/bash/powerline.sh
+fi
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
@@ -51,5 +60,8 @@ fi
 if [ "$(ssh-add -l)" = "The agent has no identities."  ]; then
     ssh-add
 fi
+
+# kubectl bash completion
+source <(kubectl completion bash)
 
 cd $HOME
