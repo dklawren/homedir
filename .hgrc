@@ -12,15 +12,11 @@ show = log -pr
 [extensions]
 rebase =
 color =
-#fsmonitor =
 pager =
 progress =
 histedit =
 strip =
 shelve =
-#prompt = ~/bin/hg_prompt.py
-#reviewboard = ~/devel/repos/hg/version-control-tools/hgext/reviewboard/client.py
-#evolve = ~/devel/repos/hg/evolve/hgext/evolve.py
 fetch =
 
 [revsetalias]
@@ -50,11 +46,5 @@ desc.here = bold blue_background
 
 [mozilla]
 ircnick = dkl
-
-[paths]
-# For HTTP pushing
-review = https://reviewboard-hg.mozilla.org/autoreview
-# For SSH pushing
-review = ssh://reviewboard-hg.mozilla.org/autoreview
 
 %include ~/.hgrc.bugzilla

@@ -6,10 +6,9 @@
 
 - link:
     ~/.aliases: .aliases
-    ~/.bash_logout: .bash_logout
     ~/.bash_profile: .bash_profile
-    ~/.bash_prompt: .bash_prompt
     ~/.bashrc: .bashrc
+    ~/.config: .config
     ~/.exports: .exports
     ~/.functions: .functions
     ~/.gitconfig: .gitconfig
