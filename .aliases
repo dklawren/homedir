@@ -6,6 +6,7 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 # Easier navigation: .., ..., ...., ....., ~ and -
+alias cd="cd -P"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
