@@ -64,4 +64,6 @@ fi
 # kubectl bash completion
 source <(kubectl completion bash)
 
+# git bash completion
+. /usr/share/bash-completion/completions/git
 cd $HOME
