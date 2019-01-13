@@ -45,9 +45,6 @@ for file in ~/.{aliases,functions,helpers,path,exports}; do
 done
 unset file
 
-sudo mkdir -p /c
-[[ $(findmnt -M /c) ]] || sudo mount -o bind /mnt/c /c
-
 # ssh-agent configuration
 if [ -z "$(pgrep ssh-agent)"  ]; then
     rm -rf /tmp/ssh-*
@@ -62,7 +59,9 @@ if [ "$(ssh-add -l)" = "The agent has no identities."  ]; then
 fi
 
 # kubectl bash completion
-source <(kubectl completion bash)
+if [ -f `which kubectl` ]; then
+    source <(kubectl completion bash)
+fi
 
 # git bash completion
 . /usr/share/bash-completion/completions/git
