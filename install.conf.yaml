@@ -1,6 +1,6 @@
 - defaults:
     link:
-      relink: true
+      force: true
 
 - clean: ['~']
 
@@ -29,4 +29,3 @@
   - [git submodule update --init --recursive, Installing submodules]
   - ~/.tmux/plugins/tpm/bin/install_plugins
   - vim +PluginInstall +qall
-  - sudo apt install powerline fonts-powerline
