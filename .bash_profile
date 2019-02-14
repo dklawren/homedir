@@ -63,6 +63,9 @@ if [ -f `which kubectl` ]; then
     source <(kubectl completion bash)
 fi
 
+# User local::lib
+eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+
 # git bash completion
 . /usr/share/bash-completion/completions/git
 cd $HOME
