@@ -1,5 +1,19 @@
-- name: create ansible user
-  user: name=ansible uid=900
+- name: Ensure group "docker" exists
+  group:
+    name: docker
+    state: present
 
-- name: copy sudoers_ansible
-  copy: src=files/sudoers_ansible dest=/etc/sudoers.d/ansible owner=root group=root mode=0440
+- name: create user
+  user:
+    name: dkl
+    uid: 1000
+    groups: docker
+    state: present
+
+- name: copy sudoers_dkl
+  copy:
+    src: files/sudoers_dkl
+    dest: /etc/sudoers.d/dkl
+    owner: root
+    group: root
+    mode: 0440
