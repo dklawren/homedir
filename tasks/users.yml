@@ -3,7 +3,7 @@
     name: docker
     state: present
 
-- name: create user
+- name: create user 'dkl'
   user:
     name: dkl
     uid: 1000

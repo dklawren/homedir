@@ -10,7 +10,7 @@
 
 - name: Copy dotfiles
   copy:
-    src: /ansible/{{ item }}
+    src: /ansible/dotfiles/{{ item }}
     dest: /home/dkl
     owner: dkl
     group: dkl
@@ -29,7 +29,11 @@
     - .inputrc
     - .path
     - .tmux.conf
-    - bin
+
+- name: Copy bin files
+  copy:
+    src: /ansible/bin
+    dest: /home/dkl/bin
 
 - name: Link vimrc
   file:

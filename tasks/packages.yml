@@ -1,6 +1,7 @@
 - name: Install packages
   dnf:
     name:
+      - ctags
       - docker
       - docker-compose
       - kubernetes-client
