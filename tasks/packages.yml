@@ -7,9 +7,22 @@
       - kubernetes-client
       - perl-App-cpanminus
       - patch
+      - php
+      - php-json
       - powerline
       - powerline-fonts
+      - python
       - tmux
       - tmux-powerline
       - vim-enhanced
     state: present
+
+- name: Install CPAN Modules
+  cpanm:
+    name: "{{ item }}"
+    notest: True
+    locallib: /home/dkl/perl5
+  with_items:
+    - Perl::Critic
+    - Perl::Critic::Policy::Freenode::PackageMatchesFilename
+    - Perl::Tidy
