@@ -46,6 +46,19 @@
   args:
     chdir: /home/dkl/.vim
 
+- name: Download CircleCI CLI
+  get_url:
+    url: https://circle.ci/cli
+    dest: /tmp/circle-ci-cli
+
+- name: Install CircleCI CLI
+  shell: bash /tmp/circle-ci-cli
+
+- name: Remove the CircleCI CLI installer
+  file:
+    path: /tmp/circle-ci-cli
+    state: absent
+
 - name: Chown all home dir files to dkl.dkl
   file:
     dest: /home/dkl
