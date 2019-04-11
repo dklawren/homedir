@@ -1,21 +1,32 @@
 - name: Install packages
   dnf:
-    name:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
       - ctags
       - docker
       - docker-compose
+      - git
+      - iproute
+      - iputils
       - kubernetes-client
-      - perl-App-cpanminus
+      - man
+      - mercurial
       - patch
+      - perl-App-cpanminus
       - php
+      - php-curl
       - php-json
       - powerline
       - powerline-fonts
-      - python
+      - python3
+      - python3-virtualenv
+      - ripgrep
       - tmux
       - tmux-powerline
       - vim-enhanced
-    state: present
+      - xz
 
 - name: Install CPAN Modules
   cpanm:

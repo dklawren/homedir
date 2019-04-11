@@ -1,3 +1,38 @@
+- name: Git checkout libphutil
+  git:
+    repo: https://github.com/phacility/libphutil.git
+    dest: /home/dkl/.mozbuild/libphutil
+
+- name: Git checkout arcanist
+  git:
+    repo: https://github.com/phacility/arcanist.git
+    dest: /home/dkl/.mozbuild/arcanist
+
+- name: Git checkout cinnabarc
+  git:
+    repo: https://github.com/mozilla-conduit/arcanist.git
+    dest: /home/dkl/.mozbuild/cinnabarc
+
+- name: Git checkout and install git-cinnabar
+  shell: |
+    git clone https://github.com/glandium/git-cinnabar.git --branch master --single-branch /home/dkl/.mozbuild/git-cinnabar
+    export PATH=/home/dkl/.mozbuild/git-cinnabar:$PATH
+    cd /home/dkl/.mozbuild/git-cinnabar && git cinnabar download
+
+- name: Create /home/dkl/.mozbuild/moz-phab
+  file:
+    dest: /home/dkl/.mozbuild/moz-phab
+    mode: 0755
+    owner: dkl
+    group: dkl
+    state: directory
+
+- name: Checkout moz-phab code review wrapper
+  get_url:
+    url: https://raw.githubusercontent.com/mozilla-conduit/review/a35696157c060cbc7a5a600f4d033f07b6c18da9/moz-phab
+    dest: /home/dkl/.mozbuild/moz-phab/moz-phab
+    mode: 0755
+
 - name: Git checkout dotvim repo
   git:
     repo: https://github.com/dklawren/dotvim.git
@@ -27,6 +62,7 @@
     - .helpers
     - .hgrc
     - .inputrc
+    - .NERDTreeBookmarks
     - .path
     - .tmux.conf
 

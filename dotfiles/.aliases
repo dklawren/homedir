@@ -23,6 +23,10 @@ alias vi='vim'
 alias tmux="tmux -2"
 alias dmux="ssh -t docker tmux new -A"
 
+# Arcanist, Cinnabarc
+alias arc="$HOME/.mozbuild/arcanist/bin/arc"
+alias cinnabarc="$HOME/.mozbuild/cinnabarc/bin/arc"
+
 # Bazaar
 alias bdiff='bzr diff'
 alias bstat='bzr status -S | grep -v ^\?'
@@ -47,6 +51,7 @@ alias hstat='hg status'
 alias hdiff='hg diff'
 
 # Python
+alias venv='python3 -m virtualenv venv; source venv/bin/activate'
 alias ve='virtualenv-3.6 ./venv'
 alias ae='source ./venv/bin/activate'
 alias de='deactivate'
