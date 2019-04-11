@@ -1,32 +1,54 @@
+- name: Install Docker apt key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Install Docker repo
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+    state: present
+
+- name: Install Google Cloud apt key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg 
+    state: present
+
+- name: Install Kubernetes apt repo
+  apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+
 - name: Install packages
-  dnf:
+  apt:
     name: "{{ packages }}"
     state: present
+    update_cache: yes
   vars:
     packages:
+      - apt-transport-https
+      - containerd.io
       - ctags
-      - docker
-      - docker-compose
+      - docker-ce
+      - docker-ce-cli
+      - gcc
       - git
-      - iproute
-      - iputils
-      - kubernetes-client
+      - iproute2
+      - kubectl
+      - make
       - man
       - mercurial
       - patch
-      - perl-App-cpanminus
+      - cpanminus
       - php
       - php-curl
       - php-json
       - powerline
-      - powerline-fonts
+      - fonts-powerline
       - python3
       - python3-virtualenv
-      - ripgrep
       - tmux
-      - tmux-powerline
-      - vim-enhanced
-      - xz
+      - vim
+      - xz-utils
 
 - name: Install CPAN Modules
   cpanm:

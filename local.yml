@@ -2,7 +2,7 @@
   become: true
   pre_tasks:
     - name: upgrade all packages
-      dnf:
+      apt:
         name: "*"
         state: latest
   tasks:
