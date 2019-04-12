@@ -66,11 +66,6 @@
     - .path
     - .tmux.conf
 
-- name: Copy bin files
-  copy:
-    src: bin
-    dest: /home/dkl/bin
-
 - name: Link vimrc
   file:
     src: /home/dkl/.vim/rc/vimrc
