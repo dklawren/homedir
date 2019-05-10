@@ -1,11 +1,12 @@
-- name: Install RPM Fusion
+- name: Install RPM Fusion Free
   dnf:
-    name: {{ urls }}
+    name: https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-30.noarch.rpm
     state: present
-  vars:
-    urls:
-      - 'https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm'
-      - 'https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
+
+- name: Install RPM Fusion Non-Free
+  dnf:
+    name: https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-30.noarch.rpm
+    state: present
 
 - name: Install packages
   dnf:
@@ -29,6 +30,7 @@
       - php-json
       - powerline
       - powerline-fonts
+      - procps-ng
       - python3
       - python3-virtualenv
       - ripgrep
@@ -42,9 +44,9 @@
 
 - name: Install CPAN Modules
   cpanm:
-    NAME: "{{ item }}"
+    name: "{{ item }}"
     notest: True
-    system_lib: yes
+    system_lib: True
   with_items:
     - Log::Log4perl
     - Perl::Critic
