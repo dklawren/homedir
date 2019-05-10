@@ -45,4 +45,5 @@
   with_items:
     - Perl::Critic
     - Perl::Critic::Policy::Freenode::PackageMatchesFilename
+    - Perl::LanguageServer
     - Perl::Tidy
