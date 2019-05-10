@@ -68,12 +68,12 @@ if [ -f `which kubectl` ]; then
 fi
 
 # User local::lib
-eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+# eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
 
 # git bash completion
 . /usr/share/bash-completion/completions/git
 
 # Fix docker permissions
-sudo chown root.docker /var/run/docker.sock
+# sudo chown root.docker /var/run/docker.sock
 
 cd $HOME

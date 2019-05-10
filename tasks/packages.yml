@@ -1,3 +1,12 @@
+- name: Install RPM Fusion
+  dnf:
+    name: {{ urls }}
+    state: present
+  vars:
+    urls:
+      - 'https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm'
+      - 'https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
+
 - name: Install packages
   dnf:
     name: "{{ packages }}"
@@ -27,13 +36,18 @@
       - tmux-powerline
       - vim-enhanced
       - xz
+      - sysstat
+      - htop
+      - glances
 
 - name: Install CPAN Modules
   cpanm:
-    name: "{{ item }}"
+    NAME: "{{ item }}"
     notest: True
-    locallib: /home/dkl/perl5
+    system_lib: yes
   with_items:
+    - Log::Log4perl
     - Perl::Critic
     - Perl::Critic::Policy::Freenode::PackageMatchesFilename
+    - Perl::LanguageServer
     - Perl::Tidy
