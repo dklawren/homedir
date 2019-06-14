@@ -11,7 +11,7 @@ MAINTAINER David Lawrence <dkl@mozilla.com>
 ENV USER dkl
 
 # Packages
-RUN dnf -y -q install ansible git sudo && dnf clean all
+RUN dnf -y -q install ansible git sudo aptitude & dnf clean all
 
 # Ansible
 COPY . /ansible
