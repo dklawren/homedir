@@ -34,9 +34,9 @@ alias bup='bzr update'
 
 # Docker
 alias d=docker
-alias dexec='docker exec -it'
-alias dcomp=docker-compose
-alias dmach=docker-machine
+alias dx='docker exec -it'
+alias dc=docker-compose
+alias dm=docker-machine
 
 # Git
 alias g=git
