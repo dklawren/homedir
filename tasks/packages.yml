@@ -21,6 +21,7 @@
       - golang
       - iproute2
       - kubectl
+      - libperl-dev
       - make
       - man
       - mercurial
