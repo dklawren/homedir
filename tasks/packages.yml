@@ -20,10 +20,12 @@
       - docker-compose
       - dunst
       - git
+      - glances
+      - htop
       - i3
-      - i3status
-      - i3lock
       - i3-ipc
+      - i3lock
+      - i3status
       - iproute
       - iputils
       - kubernetes-client
@@ -41,13 +43,11 @@
       - python3-virtualenv
       - ripgrep
       - rofi
+      - sysstat
       - tmux
       - tmux-powerline
       - vim-enhanced
       - xz
-      - sysstat
-      - htop
-      - glances
 
 - name: Install CPAN Modules
   cpanm:

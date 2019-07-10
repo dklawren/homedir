@@ -78,9 +78,7 @@
     state: link
 
 - name: Install Vundle plugins
-  shell: git submodule update --init --recursive && vim +PluginInstall +qall
-  args:
-    chdir: /home/dkl/.vim
+  shell: cd /home/dkl/.vim && git submodule update --init --recursive && vim +PluginInstall +qall
 
 - name: Download CircleCI CLI
   get_url:
