@@ -14,10 +14,16 @@
     state: present
   vars:
     packages:
+      - cpanminus
       - ctags
       - docker
       - docker-compose
+      - dunst
       - git
+      - i3
+      - i3status
+      - i3lock
+      - i3-ipc
       - iproute
       - iputils
       - kubernetes-client
@@ -34,6 +40,7 @@
       - python3
       - python3-virtualenv
       - ripgrep
+      - rofi
       - tmux
       - tmux-powerline
       - vim-enhanced
@@ -46,7 +53,6 @@
   cpanm:
     name: "{{ item }}"
     notest: True
-    system_lib: True
   with_items:
     - Log::Log4perl
     - Perl::Critic

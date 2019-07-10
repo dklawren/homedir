@@ -53,11 +53,12 @@
     - .aliases
     - .bash_profile
     - .bashrc
-    - .config
+    - .config/i3
+    - .config/dunst
+    - .config/powerline
     - .exports
     - .functions
     - .gitconfig
-    - .gitignore
     - .helpers
     - .hgrc
     - .inputrc
