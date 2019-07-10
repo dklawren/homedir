@@ -43,22 +43,22 @@
     repo: https://github.com/tmux-plugins/tpm
     dest: /home/dkl/.tmux/plugins/tpm
 
-- name: Copy dotfiles
+- name: Symlink dotfiles
   copy:
     src: dotfiles/{{ item }}
     dest: /home/dkl
-    owner: dkl
-    group: dkl
-    mode: 0644
+    state: link
+    force: yes
   with_items:
     - .aliases
     - .bash_profile
     - .bashrc
-    - .config
+    - .config/i3
+    - .config/dunst
+    - .config/powerline
     - .exports
     - .functions
     - .gitconfig
-    - .gitignore
     - .helpers
     - .hgrc
     - .inputrc
@@ -78,9 +78,7 @@
     state: link
 
 - name: Install Vundle plugins
-  shell: git submodule update --init --recursive && vim +PluginInstall +qall
-  args:
-    chdir: /home/dkl/.vim
+  shell: cd /home/dkl/.vim && git submodule update --init --recursive && vim +PluginInstall +qall
 
 - name: Download CircleCI CLI
   get_url:
