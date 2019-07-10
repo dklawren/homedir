@@ -15,10 +15,14 @@
     update_cache: yes
   vars:
     packages:
+      - cpanminus
       - ctags
+      - dunst
+      - fonts-powerline
       - gcc
       - git
       - golang
+      - i3
       - iproute2
       - kubectl
       - libperl-dev
@@ -26,14 +30,13 @@
       - man
       - mercurial
       - patch
-      - cpanminus
       - php
       - php-curl
       - php-json
       - powerline
-      - fonts-powerline
       - python3
       - python3-virtualenv
+      - rofi
       - tmux
       - vim
       - xz-utils
@@ -42,7 +45,6 @@
   cpanm:
     name: "{{ item }}"
     notest: True
-    locallib: /home/dkl/perl5
   with_items:
     - Perl::Critic
     - Perl::Critic::Policy::Freenode::PackageMatchesFilename
