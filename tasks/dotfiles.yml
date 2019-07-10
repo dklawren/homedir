@@ -44,9 +44,9 @@
     dest: /home/dkl/.tmux/plugins/tpm
 
 - name: Symlink dotfiles
-  copy:
-    src: dotfiles/{{ item }}
-    dest: /home/dkl
+  file:
+    src: "{{ playbook_dir }}/dotfiles/{{ item }}"
+    dest: /home/dkl/{{ item }}
     state: link
     force: yes
   with_items:
