@@ -43,13 +43,12 @@
     repo: https://github.com/tmux-plugins/tpm
     dest: /home/dkl/.tmux/plugins/tpm
 
-- name: Copy dotfiles
-  copy:
-    src: dotfiles/{{ item }}
-    dest: /home/dkl
-    owner: dkl
-    group: dkl
-    mode: 0644
+- name: Symlink dotfiles
+  file:
+    src: "{{ playbook_dir }}/dotfiles/{{ item }}"
+    dest: /home/dkl/{{ item }}
+    state: link
+    force: yes
   with_items:
     - .aliases
     - .bash_profile
