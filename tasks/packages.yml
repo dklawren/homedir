@@ -43,6 +43,7 @@
       - docker
       - docker-compose
       - dunst
+      - feh
       - git
       - glances
       - google-chrome-stable
