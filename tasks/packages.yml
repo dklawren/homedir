@@ -8,19 +8,6 @@
     name: https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-30.noarch.rpm
     state: present
 
-- name: Install Visual Studio Code
-  dnf:
-    name: https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-30.noarch.rpm
-    state: present
-
-- name: Add Visual Studio Code repo
-  yum_repository:
-    name: vscode
-    description: Visual Studio Code
-    baseurl: https://packages.microsoft.com/yumrepos/vscode
-    gpgcheck: yes
-    gpgcakey: https://packages.microsoft.com/keys/microsoft.asc
-
 - name: Add Google Chrome repo
   yum_repository:
     name: google-chrome
@@ -28,6 +15,9 @@
     baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64
     gpgcheck: yes
     gpgcakey: https://dl.google.com/linux/linux_signing_key.pub
+
+- name: Enable Fira Code font repo
+  shell: dnf copr enable evana/fira-code-fonts
 
 - name: Install packages
   dnf:
@@ -40,10 +30,9 @@
       - compton
       - cpanminus
       - ctags
-      - docker
-      - docker-compose
       - dunst
       - feh
+      - fira-code-fonts
       - git
       - glances
       - google-chrome-stable
@@ -70,11 +59,35 @@
       - ripgrep
       - rofi
       - sakura
+      - snapd
       - sysstat
       - tmux
       - tmux-powerline
       - vim-enhanced
       - xz
+
+- name: Install Visual Studio Code
+  dnf:
+    name: https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-30.noarch.rpm
+    state: present
+
+- name: Add Visual Studio Code repo
+  yum_repository:
+    name: vscode
+    description: Visual Studio Code
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    gpgcheck: yes
+    gpgcakey: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: Install Slack
+  flatpak:
+    name: https://flathub.org/repo/appstream/com.slack.Slack.flatpakref
+    state: present
+
+- name: Install Mailspring
+  snap:
+    name: mailspring
+    state: present
 
 - name: Install CPAN Modules
   cpanm:

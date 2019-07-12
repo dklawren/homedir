@@ -1,7 +1,7 @@
-export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
-if [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default && exit
-fi
+#export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
+#if [ -z "$TMUX" ]; then
+#    tmux attach -t default || tmux new -s default && exit
+#fi
 
 if [ -f `which powerline-daemon` ]; then
   powerline-daemon -q
@@ -76,4 +76,4 @@ fi
 # Fix docker permissions
 # sudo chown root.docker /var/run/docker.sock
 
-cd $HOME
+# cd $HOME
