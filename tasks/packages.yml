@@ -27,6 +27,30 @@
     gpgcheck: yes
     gpgcakey: https://packages.microsoft.com/keys/microsoft.asc
 
+- name: Docker - Remove any standard docker packages
+  dnf:
+    name: "{{ packages }}"
+    state: absent
+  vars:
+    packages:
+      - docker-client
+      - docker-client-latest
+      - docker-common
+      - docker-latest
+      - docker-latest-logrotate
+      - docker-logrotate
+      - docker-selinux
+      - docker-engine-selinux
+      - docker-engine
+
+- name: Docker - Add docker.com repo
+  yum_repository:
+      name: docker-ce
+      description: Docker CE Nightly
+      baseurl: https://download.docker.com/linux/fedora/$releasever/x86_64/nightly
+      gpgcheck: yes
+      gpgcakey: https://download.docker.com/linux/fedora/gpg
+
 - name: Install packages
   dnf:
     name: "{{ packages }}"
@@ -36,8 +60,11 @@
     packages:
       - code
       - compton
+      - containerd.io
       - cpanminus
       - ctags
+      - docker-ce
+      - docker-ce-cli
       - dunst
       - feh
       - fira-code-fonts
