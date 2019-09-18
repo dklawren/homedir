@@ -53,8 +53,7 @@
     - .aliases
     - .bash_profile
     - .bashrc
-    - .config/i3
-    - .config/dunst
+    - .config/nvim
     - .config/powerline
     - .exports
     - .functions
@@ -65,6 +64,7 @@
     - .NERDTreeBookmarks
     - .path
     - .tmux.conf
+    - .zshrc
 
 - name: Copy bin files
   copy:

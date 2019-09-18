@@ -19,7 +19,7 @@ alias dl="cd ~/Downloads"
 alias h="history"
 alias l.='ls -d .*'
 alias ll='ls -l'
-alias vi='vim'
+alias vi='TERM=term nvim'
 alias tmux="tmux -2"
 alias dmux="ssh -t docker tmux new -A"
 

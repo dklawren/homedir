@@ -1,7 +1,7 @@
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:~/devel/repos/github/phacility/arcanist/bin
 export TERM=screen-256color
-export COLORTERM=screen-256color
+export COLORTERM=term-256color
 export JADE_PUB=/usr/share/sgml
 export LDP_HOME=/usr/share/sgml/docbook/dsssl-stylesheets-1.79/dtds/decls
 export EDITOR=vim
