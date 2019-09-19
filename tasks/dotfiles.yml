@@ -66,6 +66,22 @@
     - .tmux.conf
     - .zshrc
 
+- name: Neovim minpac support
+  git:
+    repo: https://github.com/k-takata/minpac.git
+    dest: /home/dkl/.config/nvim/pack/minpac/opt/minpac
+
+- name: Download oh-my-zsh
+  get_url:
+    url: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+    dest: /tmp/omzinstall.sh
+    mode: '0755'
+
+- name: Setup oh-my-zsh
+  command: /tmp/omzinstall.sh
+  become: true
+  become_user: dkl
+
 - name: Copy bin files
   copy:
     src: bin

@@ -66,6 +66,7 @@
       - sysstat
       - tmux
       - tmux-powerline
+      - util-linux-user
       - vim-enhanced
       - xz
       - zsh
@@ -80,8 +81,3 @@
     - Perl::Critic::Policy::Freenode::PackageMatchesFilename
     - Perl::LanguageServer
     - Perl::Tidy
-
-- name: oh-my-zsh
-  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  args:
-    warn: no
