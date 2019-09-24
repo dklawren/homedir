@@ -107,6 +107,7 @@ set wildmenu                    " Display all matching files when we tab complet
 set t_Co=256
 colorscheme gruvbox
 set background=dark
+highlight Normal ctermbg=None
 
 " Clipboard functionality (paste from system)
 vnoremap  <leader>y "+y
