@@ -64,12 +64,12 @@
     - .NERDTreeBookmarks
     - .path
     - .tmux.conf
-		- .zlogin
-		- .zlogout
-		- .zpreztorc
-		- .zprofile
-		- .zshenv
-		- .zshrc
+    - .zlogin
+    - .zlogout
+    - .zpreztorc
+    - .zprofile
+    - .zshenv
+    - .zshrc
 
 - name: Neovim minpac support
   git:
