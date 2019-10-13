@@ -44,14 +44,17 @@
       - ctags
       - docker-ce
       - docker-ce-cli
+      - fzf
       - git
       - htop
+      - hub
       - iproute
       - iputils
       - kubernetes-client
       - man
       - mercurial
       - neovim
+      - nodejs
       - patch
       - perl-App-cpanminus
       - php
@@ -63,6 +66,7 @@
       - python3
       - python3-virtualenv
       - ripgrep
+      - rsync
       - sysstat
       - tmux
       - tmux-powerline
