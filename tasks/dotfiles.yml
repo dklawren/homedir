@@ -43,6 +43,12 @@
     repo: https://github.com/tmux-plugins/tpm
     dest: /home/dkl/.tmux/plugins/tpm
 
+- name: Create .config if it does not exist
+  file:
+    path: /home/dkl/.config
+    state: directory
+    mode: '0755'
+
 - name: Symlink dotfiles
   file:
     src: "{{ playbook_dir }}/dotfiles/{{ item }}"
