@@ -15,4 +15,5 @@ RUN dnf -y -q install ansible git sudo && dnf clean all
 
 # Ansible
 COPY . /ansible
+WORKDIR /ansible
 RUN cd /ansible && ansible-playbook local.yml
