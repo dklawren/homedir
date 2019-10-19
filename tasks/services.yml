@@ -1,5 +1,5 @@
-- name: Make sure Docker is running
-  systemd:
-    enabled: yes
-    state: started
-    name: docker
+#- name: Make sure Docker is running
+#  systemd:
+#    enabled: yes
+#    state: started
+#    name: docker
