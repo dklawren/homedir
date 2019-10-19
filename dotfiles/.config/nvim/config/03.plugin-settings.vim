@@ -53,15 +53,6 @@ let g:airline#extensions#tabline#enabled = 1
 set statusline+=%#warningmsg#
 set statusline+=%*
 
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier', 'eslint']
-let g:ale_fix_on_save = 1
-
-let g:ale_sign_error = ''
-let g:ale_sign_warning = '.'
-let g:ale_lint_on_enter = 0
-let g:ale_javascript_prettier_use_local_config = 1
-
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other
 " plugin.

@@ -10,7 +10,6 @@ Plug 'w0rp/ale'
 Plug 'Shougo/neoinclude.vim'
 Plug 'jsfaint/coc-neoinclude'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-"Plug 'galooshi/vim-import-js', { 'do': 'npm install -g import-js' }
 
 " Add or remove your plugins here like this:
 Plug 'HerringtonDarkholme/yats.vim'
@@ -19,31 +18,28 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'morhetz/gruvbox'
 
 " Layout
+Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'bling/vim-bufferline'
-Plug 'Yggdroot/indentLine'
-
-" Typescript Plugins
-"Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " IDE stuff
-"Plug 'kien/ctrlp.vim'
-Plug 'junegunn/fzf.vim'
-Plug 'jeetsukumaran/vim-buffergator'
-Plug 'dyng/ctrlsf.vim'
-Plug 'vimwiki/vimwiki'
-Plug 'scrooloose/nerdtree'
-Plug 'jiangmiao/auto-pairs'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdcommenter'
 Plug 'diepm/vim-rest-console'
+Plug 'dyng/ctrlsf.vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'farmergreg/vim-lastplace'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'vimwiki/vimwiki'
 
-"master Languages
+" Languages
 Plug 'vim-perl/vim-perl'
 
 " Misc
