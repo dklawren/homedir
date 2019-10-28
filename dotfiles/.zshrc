@@ -68,7 +68,7 @@ ZSH_THEME="steeef"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(cpanm docker docker-compose dnf gitfast git-extras mercurial perl ssh-agent z)
+plugins=(cpanm docker docker-compose dnf fzf gitfast git-extras mercurial perl ssh-agent z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,7 +106,6 @@ bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
 
 # completion in the middle of a line
-
 bindkey '^i' expand-or-complete-prefix
 bindkey '^P' up-history
 bindkey '^N' down-history
@@ -114,3 +113,7 @@ bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
+
+# FZF Keybindings
+source /usr/share/fzf/shell/key-bindings.zsh
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
