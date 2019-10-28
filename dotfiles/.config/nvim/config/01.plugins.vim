@@ -20,10 +20,11 @@ Plug 'morhetz/gruvbox'
 " Layout
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'bling/vim-bufferline'
 
 " IDE stuff
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-rooter'
 Plug 'diepm/vim-rest-console'
 Plug 'dyng/ctrlsf.vim'
@@ -38,10 +39,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-unimpaired'
 
 " Languages
 Plug 'vim-perl/vim-perl'
+Plug 'docunext/closetag.vim'
 
 " Misc
 Plug 'vimwiki/vimwiki'

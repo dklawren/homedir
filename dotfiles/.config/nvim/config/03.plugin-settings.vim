@@ -257,3 +257,8 @@ let g:vrc_curl_opts = {
   \ '-k': '',
   \ '-x': 'localhost:1080'
   \}
+
+" NERDTree Configuration
+let NERDTreeShowBookmarks=1
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
