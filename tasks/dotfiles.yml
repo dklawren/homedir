@@ -33,11 +33,6 @@
     dest: /home/dkl/.mozbuild/moz-phab/moz-phab
     mode: 0755
 
-- name: Git checkout dotvim repo
-  git:
-    repo: https://github.com/dklawren/dotvim.git
-    dest: /home/dkl/.vim
-
 - name: Git checkout tmux plugin support
   git:
     repo: https://github.com/tmux-plugins/tpm
@@ -70,12 +65,13 @@
     - .NERDTreeBookmarks
     - .path
     - .tmux.conf
+    - .tmuxline.conf
     - .zshrc
 
-- name: Neovim minpac support
-  git:
-    repo: https://github.com/k-takata/minpac.git
-    dest: /home/dkl/.config/nvim/pack/minpac/opt/minpac
+- name: install Vim Plug support
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: /home/dkl/.local/share/nvim/site/autoload/plug.vim
 
 - name: Download oh-my-zsh
   get_url:
@@ -92,15 +88,6 @@
   copy:
     src: bin
     dest: /home/dkl/bin
-
-- name: Link vimrc
-  file:
-    src: /home/dkl/.vim/rc/vimrc
-    dest: /home/dkl/.vimrc
-    state: link
-
-- name: Install Vundle plugins
-  shell: cd /home/dkl/.vim && git submodule update --init --recursive && vim +PluginInstall +qall
 
 - name: Download CircleCI CLI
   get_url:

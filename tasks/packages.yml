@@ -1,11 +1,11 @@
 - name: Install RPM Fusion Free
   dnf:
-    name: https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-30.noarch.rpm
+    name: https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-31.noarch.rpm
     state: present
 
 - name: Install RPM Fusion Non-Free
   dnf:
-    name: https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-30.noarch.rpm
+    name: https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-31.noarch.rpm
     state: present
 
 - name: Docker - Remove any standard docker packages
@@ -28,7 +28,7 @@
   yum_repository:
       name: docker-ce
       description: Docker CE Nightly
-      baseurl: https://download.docker.com/linux/fedora/$releasever/x86_64/nightly
+      baseurl: https://download.docker.com/linux/fedora/30/x86_64/nightly
       gpgcheck: yes
       gpgcakey: https://download.docker.com/linux/fedora/gpg
 
@@ -74,6 +74,12 @@
       - vim-enhanced
       - xz
       - zsh
+
+- name: Install docker-compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64
+    dest: /usr/local/bin/docker-compose
+    mode: '0755'
 
 - name: Install CPAN Modules
   cpanm:
