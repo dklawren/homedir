@@ -1,11 +1,12 @@
 
-Autoland /c/Users/dklaw/Sync/devel/repos/github/mozilla/conduit/autoland-transplant
-BMO /c/Users/dklaw/Sync/devel/repos/github/mozilla/conduit/bmo
-Demo /c/Users/dklaw/Sync/devel/repos/github/mozilla/conduit/demo/data
-DotVim /c/Users/dklaw/Sync/devel/repos/github/dklawren/dotvim
-Homedir /c/Users/dklaw/Sync/devel/repos/github/dklawren/homedir
-LandoAPI /c/Users/dklaw/Sync/devel/repos/github/mozilla/conduit/lando-api
-LandoUI /c/Users/dklaw/Sync/devel/repos/github/mozilla/conduit/lando-ui
-PhabExt /c/Users/dklaw/Sync/devel/repos/github/mozilla/conduit/phabricator-extensions
-Releasehealth /c/Users/dklaw/Sync/devel/repos/github/mozilla/releasehealth
-Saneutils /c/Users/dklaw/Sync/devel/repos/github/mozilla/saneutils
+Autoland /mnt/c/Users/dklaw/OneDrive/Work/devel/repos/github/mozilla/conduit/autoland-transplant
+BMO /mnt/c/Users/dklaw/OneDrive/Work/devel/repos/github/mozilla/bmo/master
+Demo /mnt/c/Users/dklaw/OneDrive/Work/devel/repos/github/mozilla/conduit-demo
+DotVim /mnt/c/Users/dklaw/OneDrive/Work/devel/repos/github/dklawren/dotvim
+Homedir /mnt/c/Users/dklaw/OneDrive/Work/devel/repos/github/dklawren/homedir
+LandoAPI /mnt/c/Users/dklaw/OneDrive/Work/devel/repos/github/mozilla/lando-api
+LandoUI /mnt/c/Users/dklaw/OneDrive/Work/devel/repos/github/mozilla/lando-ui
+MozPhab /mnt/c/Users/dklaw/OneDrive/Work/devel/repos/github/mozilla/mozphab
+PhabExt /mnt/c/Users/dklaw/OneDrive/Work/devel/repos/github/mozilla/phabricator-extensions
+Releasehealth /mnt/c/Users/dklaw/OneDrive/Work/devel/repos/github/mozilla/releasehealth
+Saneutils /mnt/c/Users/dklaw/OneDrive/Work/devel/repos/github/mozilla/saneutils
