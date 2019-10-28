@@ -53,15 +53,6 @@ let g:airline#extensions#tabline#enabled = 1
 set statusline+=%#warningmsg#
 set statusline+=%*
 
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier', 'eslint']
-let g:ale_fix_on_save = 1
-
-let g:ale_sign_error = ''
-let g:ale_sign_warning = '.'
-let g:ale_lint_on_enter = 0
-let g:ale_javascript_prettier_use_local_config = 1
-
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other
 " plugin.
@@ -173,7 +164,7 @@ nmap <leader>uu :UndotreeToggle<cr>"
 
 " FZF Confiuration
 nmap <leader>fb :Buffers<cr>
-nmap <leader>ff :Files<cr>
+nmap <leader>ff :ProjectFiles<cr>
 
 " This is the default extra key bindings
 let g:fzf_action = {
@@ -228,16 +219,22 @@ autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+command! ProjectFiles execute 'Files' s:find_git_root()
+
 " Editorconfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.\*', 'scp://.\*']
 
 " Ale configuration
 let g:ale_completion_enabled = 0
 let g:ale_lint_on_enter = 1
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_sign_error = 'X'
 let g:ale_sign_warning = 'o'
 let g:ale_perl_perl_options = '-c -Mwarnings -I. -Ilib'
+let g:ale_perl_perltidy_options = '-pro=/home/dkl/devel/repos/github/mozilla/bmo/master/.perltidyrc'
 let g:ale_perl_perlcritic_showrules = 1
 let g:ale_type_map = {
 \ 'perlcritic': {'ES': 'WS', 'E': 'W'},
@@ -247,7 +244,7 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'perl': ['perltidy'],
+\   'perl': ['perltidy']
 \}
 
 " VRC Rest Client
