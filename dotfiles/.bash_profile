@@ -39,7 +39,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Docker environment config for windows
-# export DOCKER_HOST=tcp://localhost:2375
+export DOCKER_HOST=tcp://localhost:2375
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -77,4 +77,6 @@ fi
 # sudo chown root.docker /var/run/docker.sock
 
 # cd $HOME
-_byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
+if [ -z "$VSCODE" ]; then
+    _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
+fi
