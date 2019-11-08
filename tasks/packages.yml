@@ -86,6 +86,8 @@
     name: "{{ item }}"
     notest: True
   with_items:
+    - App::cpanminus
+    - Carton
     - Log::Log4perl
     - Perl::Critic
     - Perl::Critic::Policy::Freenode::PackageMatchesFilename
