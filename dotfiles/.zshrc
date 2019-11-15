@@ -8,7 +8,7 @@ export ZSH="/home/dkl/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="steeef"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -117,3 +117,7 @@ bindkey '^r' history-incremental-search-backward
 # FZF Keybindings
 source /usr/share/fzf/shell/key-bindings.zsh
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+
+if [ -z "$VSCODE" ]; then
+    _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
+fi
