@@ -67,6 +67,24 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" coc config
+let g:coc_global_extensions = [
+  \ 'coc-css',
+  \ 'coc-eslint',
+  \ 'coc-git',
+  \ 'coc-highlight',
+  \ 'coc-html',
+  \ 'coc-json',
+  \ 'coc-markdownlint',
+  \ 'coc-pairs',
+  \ 'coc-phpls',
+  \ 'coc-prettier',
+  \ 'coc-python',
+  \ 'coc-snippets',
+  \ 'coc-yaml',
+  \ 'coc-yank'
+  \ ]
+
 " Use <c-space> for trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
