@@ -38,6 +38,17 @@
     repo: https://github.com/tmux-plugins/tpm
     dest: /home/dkl/.tmux/plugins/tpm
 
+- name: Download oh-my-zsh
+  get_url:
+    url: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+    dest: /tmp/omzinstall.sh
+    mode: '0755'
+
+- name: Setup oh-my-zsh
+  command: /tmp/omzinstall.sh
+  become: true
+  become_user: dkl
+
 - name: Create .config if it does not exist
   file:
     path: /home/dkl/.config
@@ -73,17 +84,6 @@
   get_url:
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     dest: /home/dkl/.local/share/nvim/site/autoload/plug.vim
-
-- name: Download oh-my-zsh
-  get_url:
-    url: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
-    dest: /tmp/omzinstall.sh
-    mode: '0755'
-
-- name: Setup oh-my-zsh
-  command: /tmp/omzinstall.sh
-  become: true
-  become_user: dkl
 
 - name: Copy bin files
   copy:
