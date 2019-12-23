@@ -1,7 +1,7 @@
-export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
-if [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default && exit
-fi
+#export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
+#if [ -z "$TMUX" ]; then
+#    tmux attach -t default || tmux new -s default && exit
+#fi
 
 if [ -f `which powerline-daemon` ]; then
   powerline-daemon -q
@@ -39,7 +39,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Docker environment config for windows
-# export DOCKER_HOST=tcp://localhost:2375
+export DOCKER_HOST=tcp://localhost:2375
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -68,7 +68,7 @@ if [ -f `which kubectl` ]; then
 fi
 
 # User local::lib
-eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+# eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
 
 # git bash completion
 . /usr/share/bash-completion/completions/git
@@ -76,4 +76,7 @@ eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
 # Fix docker permissions
 # sudo chown root.docker /var/run/docker.sock
 
-cd $HOME
+# cd $HOME
+if [ -z "$VSCODE" ]; then
+    _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
+fi

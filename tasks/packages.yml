@@ -1,12 +1,20 @@
-- name: Install Google Cloud apt key
-  apt_key:
-    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg 
-    state: present
+- name: Docker - Remove any standard docker packages
+  apt:
+    name: "{{ packages }}"
+    state: absent
+  vars:
+    packages:
+      - docker
+      - docker-engine 
+      - docker.io
+      - containerd
+      - runc
 
-- name: Install Kubernetes apt repo
+- name: Docker - Add docker.com repo
   apt_repository:
-    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
-    state: present
+      repo: deb [arch=amd64] https://download.docker.com/linux/debian bullseye stable
+      state: present
+      update_cache: yes
 
 - name: Install packages
   apt:
@@ -15,37 +23,60 @@
     update_cache: yes
   vars:
     packages:
+      - byobu
+      - containerd.io
       - cpanminus
       - ctags
-      - dunst
-      - fonts-powerline
-      - gcc
+      - docker-ce
+      - docker-ce-cli
+      - fzf
       - git
-      - golang
-      - i3
-      - iproute2
-      - kubectl
-      - libperl-dev
-      - make
+      - htop
+      - hub
+      - iproute
+      - iputils
+      - kubernetes-client
       - man
       - mercurial
+      - neovim
+      - nodejs
       - patch
       - php
       - php-curl
       - php-json
       - powerline
+      - powerline-fonts
+      - procps-ng
       - python3
+      - python3-neovim
       - python3-virtualenv
-      - rofi
+      - ripgrep
+      - rsync
+      - ruby
+      - ruby-devel
+      - rubygems
+      - sysstat
       - tmux
-      - vim
-      - xz-utils
+      - tmux-powerline
+      - util-linux-user
+      - vim-enhanced
+      - xz
+      - zsh
+
+- name: Install docker-compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64
+    dest: /usr/local/bin/docker-compose
+    mode: '0755'
 
 - name: Install CPAN Modules
   cpanm:
     name: "{{ item }}"
     notest: True
   with_items:
+    - App::cpanminus
+    - Carton
+    - Log::Log4perl
     - Perl::Critic
     - Perl::Critic::Policy::Freenode::PackageMatchesFilename
     - Perl::LanguageServer
