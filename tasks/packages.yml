@@ -5,16 +5,24 @@
   vars:
     packages:
       - docker
-      - docker-engine 
+      - docker-engine
       - docker.io
       - containerd
       - runc
 
 - name: Docker - Add docker.com repo
   apt_repository:
-      repo: deb [arch=amd64] https://download.docker.com/linux/debian bullseye stable
-      state: present
-      update_cache: yes
+    repo: deb [arch=amd64] https://download.docker.com/linux/debian buster edge
+    state: present
+    update_cache: yes
+
+- name: Download docker.com key
+  get_url:
+    url: https://download.docker.com/linux/debian/gpg
+    dest: /tmp/docker.gpg
+
+- name: Install docker.com key
+  shell: apt-key add /tmp/docker.gpg
 
 - name: Install packages
   apt:
@@ -33,34 +41,31 @@
       - git
       - htop
       - hub
-      - iproute
-      - iputils
+      - iproute2
       - kubernetes-client
       - man
       - mercurial
       - neovim
       - nodejs
+      - npm
       - patch
       - php
       - php-curl
       - php-json
-      - powerline
-      - powerline-fonts
-      - procps-ng
+      - procps
       - python3
       - python3-neovim
       - python3-virtualenv
       - ripgrep
       - rsync
       - ruby
-      - ruby-devel
+      - ruby-dev
       - rubygems
       - sysstat
       - tmux
-      - tmux-powerline
-      - util-linux-user
-      - vim-enhanced
-      - xz
+      - util-linux
+      - xz-utils
+      - yarnpkg
       - zsh
 
 - name: Install docker-compose
@@ -79,5 +84,4 @@
     - Log::Log4perl
     - Perl::Critic
     - Perl::Critic::Policy::Freenode::PackageMatchesFilename
-    - Perl::LanguageServer
     - Perl::Tidy
