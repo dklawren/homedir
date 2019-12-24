@@ -68,7 +68,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(cpanm docker docker-compose dnf fzf gitfast git-extras mercurial perl ssh-agent z)
+plugins=(cpanm docker docker-compose fzf gitfast git-extras mercurial perl ssh-agent z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,7 +115,7 @@ bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
 # FZF Keybindings
-source /usr/share/fzf/shell/key-bindings.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh 
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 
 if [ -z "$VSCODE" ]; then
