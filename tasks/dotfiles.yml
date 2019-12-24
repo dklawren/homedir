@@ -44,9 +44,28 @@
     dest: /tmp/omzinstall.sh
     mode: '0755'
 
+- name: Remove old oh-my-zsh
+  file:
+    path: /home/dkl/.oh-my-zsh
+    state: absent
+
 - name: Setup oh-my-zsh
   command: /tmp/omzinstall.sh
   become: true
+  become_user: dkl
+
+- name: Install Spaceship repo
+  git:
+    repo: https://github.com/denysdovhan/spaceship-prompt.git
+    dest: /home/dkl/.oh-my-zsh/custom/themes/spaceship-prompt
+  become_user: dkl
+
+- name: Enable the Spaceship theme for Zsh
+  file:
+    dest: /home/dkl/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme
+    path: /home/dkl/.oh-my-zsh/custom/themes/spaceship.zsh-theme
+    state: link
+    force: yes
   become_user: dkl
 
 - name: Create .config if it does not exist
@@ -79,6 +98,11 @@
     - .tmux.conf
     - .tmuxline.conf
     - .zshrc
+
+- name: Create Vim plug directory
+  file:
+    path: /home/dkl/.local/share/nvim/site/autoload
+    state: directory
 
 - name: install Vim Plug support
   get_url:
