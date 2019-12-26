@@ -28,7 +28,7 @@
   yum_repository:
       name: docker-ce
       description: Docker CE Nightly
-      baseurl: https://download.docker.com/linux/fedora/30/x86_64/nightly
+      baseurl: https://download.docker.com/linux/fedora/31/x86_64/nightly
       gpgcheck: yes
       gpgcakey: https://download.docker.com/linux/fedora/gpg
 
@@ -56,13 +56,12 @@
       - mercurial
       - neovim
       - nodejs
+      - npm
       - patch
       - perl-App-cpanminus
       - php
       - php-curl
       - php-json
-      - powerline
-      - powerline-fonts
       - procps-ng
       - python3
       - python3-neovim
@@ -74,9 +73,7 @@
       - rubygems
       - sysstat
       - tmux
-      - tmux-powerline
       - util-linux-user
-      - vim-enhanced
       - xz
       - zsh
 
@@ -96,5 +93,4 @@
     - Log::Log4perl
     - Perl::Critic
     - Perl::Critic::Policy::Freenode::PackageMatchesFilename
-    - Perl::LanguageServer
     - Perl::Tidy
