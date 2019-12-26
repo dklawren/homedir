@@ -2,22 +2,26 @@
   git:
     repo: https://github.com/phacility/libphutil.git
     dest: /home/dkl/.mozbuild/libphutil
+  become_user: dkl
 
 - name: Git checkout arcanist
   git:
     repo: https://github.com/phacility/arcanist.git
     dest: /home/dkl/.mozbuild/arcanist
+  become_user: dkl
 
 - name: Git checkout cinnabarc
   git:
     repo: https://github.com/mozilla-conduit/arcanist.git
     dest: /home/dkl/.mozbuild/cinnabarc
+  become_user: dkl
 
 - name: Git checkout and install git-cinnabar
   shell: |
     git clone https://github.com/glandium/git-cinnabar.git --branch master --single-branch /home/dkl/.mozbuild/git-cinnabar
     export PATH=/home/dkl/.mozbuild/git-cinnabar:$PATH
     cd /home/dkl/.mozbuild/git-cinnabar && git cinnabar download
+  become_user: dkl
 
 - name: Create /home/dkl/.mozbuild/moz-phab
   file:
@@ -32,11 +36,14 @@
     url: https://raw.githubusercontent.com/mozilla-conduit/review/a35696157c060cbc7a5a600f4d033f07b6c18da9/moz-phab
     dest: /home/dkl/.mozbuild/moz-phab/moz-phab
     mode: 0755
+    owner: dkl
+    group: dkl
 
 - name: Git checkout tmux plugin support
   git:
     repo: https://github.com/tmux-plugins/tpm
     dest: /home/dkl/.tmux/plugins/tpm
+  become_user: dkl
 
 - name: Download oh-my-zsh
   get_url:
@@ -51,21 +58,6 @@
 
 - name: Setup oh-my-zsh
   command: /tmp/omzinstall.sh
-  become: true
-  become_user: dkl
-
-- name: Install Spaceship repo
-  git:
-    repo: https://github.com/denysdovhan/spaceship-prompt.git
-    dest: /home/dkl/.oh-my-zsh/custom/themes/spaceship-prompt
-  become_user: dkl
-
-- name: Enable the Spaceship theme for Zsh
-  file:
-    dest: /home/dkl/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme
-    path: /home/dkl/.oh-my-zsh/custom/themes/spaceship.zsh-theme
-    state: link
-    force: yes
   become_user: dkl
 
 - name: Create .config if it does not exist
@@ -73,6 +65,8 @@
     path: /home/dkl/.config
     state: directory
     mode: '0755'
+    owner: dkl
+    group: dkl
 
 - name: Symlink dotfiles
   file:
@@ -80,6 +74,8 @@
     dest: /home/dkl/{{ item }}
     state: link
     force: yes
+    owner: dkl
+    group: dkl
   with_items:
     - .aliases
     - .bash_profile
@@ -103,16 +99,21 @@
   file:
     path: /home/dkl/.local/share/nvim/site/autoload
     state: directory
+    owner: dkl
+    group: dkl
+    mode: '0755'
 
 - name: install Vim Plug support
   get_url:
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     dest: /home/dkl/.local/share/nvim/site/autoload/plug.vim
+    owner: dkl
+    group: dkl
 
 - name: Copy bin files
   copy:
     src: bin
-    dest: /home/dkl/bin
+    dest: /home/dkl
 
 - name: Download CircleCI CLI
   get_url:
@@ -128,8 +129,4 @@
     state: absent
 
 - name: Chown all home dir files to dkl.dkl
-  file:
-    dest: /home/dkl
-    owner: dkl
-    group: dkl
-    recurse: yes
+  shell: chown -R dkl.dkl /home/dkl
