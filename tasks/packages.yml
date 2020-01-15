@@ -39,7 +39,6 @@
     update_cache: yes
   vars:
     packages:
-      - byobu
       - containerd.io
       - cpanminus
       - ctags

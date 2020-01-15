@@ -1,7 +1,7 @@
-#export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
-#if [ -z "$TMUX" ]; then
-#    tmux attach -t default || tmux new -s default && exit
-#fi
+export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
+if [ -z "$TMUX"  ] && [ -z "$VSCODE"  ]; then
+  tmux attach -t default || tmux new -s default && exit
+fi
 
 if [ -f `which powerline-daemon` ]; then
   powerline-daemon -q
@@ -77,6 +77,3 @@ fi
 # sudo chown root.docker /var/run/docker.sock
 
 # cd $HOME
-if [ -z "$VSCODE" ]; then
-    _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
-fi
