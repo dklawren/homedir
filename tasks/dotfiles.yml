@@ -75,7 +75,6 @@
     - .aliases
     - .bash_profile
     - .bashrc
-    - .byobu
     - .config/nvim
     - .config/powerline
     - .exports
