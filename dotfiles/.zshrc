@@ -118,6 +118,7 @@ bindkey '^r' history-incremental-search-backward
 source /usr/share/fzf/shell/key-bindings.zsh
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 
-if [ -z "$VSCODE" ]; then
-    _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
+export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
+if [ -z "$TMUX" ] && [ -z "$VSCODE" ]; then
+  tmux attach -t default || tmux new -s default && exit
 fi
