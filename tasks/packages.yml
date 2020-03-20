@@ -67,6 +67,7 @@
       - python3-invoke
       - python3-neovim
       - python3-pip
+      - python3-rstcheck
       - python3-sphinx
       - python3-virtualenv
       - ripgrep
