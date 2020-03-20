@@ -70,6 +70,8 @@ ZSH_THEME="spaceship"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(cpanm docker docker-compose dnf fzf gitfast git-extras mercurial perl ssh-agent z)
 
+SPACESHIP_GIT_STATUS_SHOW=false
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -122,3 +124,9 @@ export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
 if [ -z "$TMUX"   ] && [ -z "$VSCODE"   ]; then
   tmux attach -t default || tmux new -s default && exit
 fi
+
+# Disable stuff for Spacehip prompt
+#SPACESHIP_GIT_SHOW="false"
+SPACESHIP_DOCKER_SHOW="false"
+
+eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
