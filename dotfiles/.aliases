@@ -41,7 +41,7 @@ alias dm=docker-machine
 # Git
 alias g=git
 alias gup='git stash; git pull --rebase; git stash pop'
-alias gstat='git status'
+alias gstat='git status -s -uno'
 alias gdiff='git diff'
 alias gwt='git worktree'
 
