@@ -1,28 +1,3 @@
-- name: Git checkout libphutil
-  git:
-    repo: https://github.com/phacility/libphutil.git
-    dest: /home/dkl/.mozbuild/libphutil
-  become_user: dkl
-
-- name: Git checkout arcanist
-  git:
-    repo: https://github.com/phacility/arcanist.git
-    dest: /home/dkl/.mozbuild/arcanist
-  become_user: dkl
-
-- name: Git checkout cinnabarc
-  git:
-    repo: https://github.com/mozilla-conduit/arcanist.git
-    dest: /home/dkl/.mozbuild/cinnabarc
-  become_user: dkl
-
-- name: Git checkout and install git-cinnabar
-  shell: |
-    git clone https://github.com/glandium/git-cinnabar.git --branch master --single-branch /home/dkl/.mozbuild/git-cinnabar
-    export PATH=/home/dkl/.mozbuild/git-cinnabar:$PATH
-    cd /home/dkl/.mozbuild/git-cinnabar && git cinnabar download
-  become_user: dkl
-
 - name: Create /home/dkl/.mozbuild/moz-phab
   file:
     dest: /home/dkl/.mozbuild/moz-phab
@@ -45,6 +20,11 @@
     dest: /home/dkl/.tmux/plugins/tpm
   become_user: dkl
 
+- name: Remove previous oh-my-zsh
+  file:
+    dest: /home/dkl/.oh-my-zsh
+    state: absent
+
 - name: Download oh-my-zsh
   get_url:
     url: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
@@ -55,11 +35,31 @@
   command: /tmp/omzinstall.sh
   become_user: dkl
 
+- name: Install Spaceship ZSH Theme
+  git:
+    repo: https://github.com/denysdovhan/spaceship-prompt.git
+    dest: /home/dkl/.oh-my-zsh/custom/themes/spaceship-prompt
+  become_user: dkl
+
+- name: Create link for Spaceship ZSH Theme
+  file:
+    src: /home/dkl/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh
+    dest: /home/dkl/.oh-my-zsh/custom/themes/spaceship.zsh-theme
+    state: link
+
 - name: Create .config if it does not exist
   file:
     path: /home/dkl/.config
     state: directory
     mode: '0755'
+    owner: dkl
+    group: dkl
+
+- name: Create ssh directory if not exists
+  file:
+    path: /home/dkl/.ssh
+    state: directory
+    mode: '0700'
     owner: dkl
     group: dkl
 
