@@ -9,6 +9,7 @@
     uid: 1000
     groups: docker
     state: present
+    shell: /bin/zsh
 
 - name: copy sudoers_dkl
   copy:
