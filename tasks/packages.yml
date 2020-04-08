@@ -1,13 +1,3 @@
-- name: Install RPM Fusion Free
-  dnf:
-    name: https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-31.noarch.rpm
-    state: present
-
-- name: Install RPM Fusion Non-Free
-  dnf:
-    name: https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-31.noarch.rpm
-    state: present
-
 - name: Docker - Remove any standard docker packages
   dnf:
     name: "{{ packages }}"
@@ -27,8 +17,8 @@
 - name: Docker - Add docker.com repo
   yum_repository:
       name: docker-ce
-      description: Docker CE Nightly
-      baseurl: https://download.docker.com/linux/fedora/31/x86_64/nightly
+      description: Docker CE Stable
+      baseurl: https://download.docker.com/linux/fedora/31/x86_64/stable
       gpgcheck: yes
       gpgcakey: https://download.docker.com/linux/fedora/gpg
 
@@ -39,13 +29,16 @@
     update_cache: yes
   vars:
     packages:
+      - bzip2
       - containerd.io
+      - cifs-utils
       - cpanminus
       - ctags
       - docker-ce
       - docker-ce-cli
       - fzf
       - git
+      - glib
       - htop
       - hub
       - iproute
@@ -61,6 +54,7 @@
       - php
       - php-curl
       - php-json
+      - pixman
       - procps-ng
       - pylint
       - python3
@@ -76,6 +70,7 @@
       - ruby-devel
       - rubygems
       - sysstat
+      - tar
       - tmux
       - util-linux-user
       - xz
