@@ -38,6 +38,7 @@
       - docker-ce-cli
       - fzf
       - git
+      - git-extras
       - glib
       - htop
       - hub
