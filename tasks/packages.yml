@@ -31,7 +31,6 @@
     packages:
       - bzip2
       - containerd.io
-      - cifs-utils
       - cpanminus
       - ctags
       - docker-ce
@@ -40,8 +39,12 @@
       - git
       - git-extras
       - glib
+      - golang
       - htop
       - hub
+      - i3
+      - i3lock
+      - i3status
       - iproute
       - iputils
       - kubernetes-client
