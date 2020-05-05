@@ -1,5 +1,5 @@
-nmap <silent> <Leader>e :NERDTreeToggle<CR>
-"nmap <silent> <Leader>e :Explore<CR>
+"nmap <silent> <Leader>e :NERDTreeToggle<CR>
+nmap <silent> <Leader>e :Explore<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
@@ -114,7 +114,7 @@ function! s:show_documentation()
 endfunction
 
 " Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
@@ -277,6 +277,6 @@ let g:vrc_curl_opts = {
   \}
 
 " NERDTree Configuration
-let NERDTreeShowBookmarks=1
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"let NERDTreeShowBookmarks=1
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
