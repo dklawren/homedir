@@ -75,6 +75,7 @@
     - .aliases
     - .bash_profile
     - .bashrc
+    - .config/i3
     - .config/nvim
     - .exports
     - .functions
