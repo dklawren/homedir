@@ -1,7 +1,9 @@
 export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
-if [ -z "$TMUX"  ] && [ -z "$VSCODE"  ]; then
-  tmux attach -t default || tmux new -s default && exit
+if [ -z "$TMUX" ] && [ -z "$VSCODE_IPC_HOOK_CLI" ]; then
+    tmux attach -t default || tmux new -s default && exit
 fi
+
+eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)    
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
@@ -28,7 +30,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Docker environment config for windows
-export DOCKER_HOST=tcp://localhost:2375
+# export DOCKER_HOST=tcp://localhost:2375
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -66,3 +68,5 @@ fi
 # sudo chown root.docker /var/run/docker.sock
 
 # cd $HOME
+
+export PATH="$HOME/.cargo/bin:$PATH"
