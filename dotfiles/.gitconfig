@@ -18,6 +18,7 @@
     ignorecase = true
     symlinks = false
     preloadindex = true
+    commitGraph = true
 [merge]
     tool = vimdiff
     conflictstyle = diff3
