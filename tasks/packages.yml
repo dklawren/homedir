@@ -51,6 +51,7 @@
       - ruby
       - ruby-devel
       - rubygems
+      - snapd
       - sysstat
       - tar
       - tmux
