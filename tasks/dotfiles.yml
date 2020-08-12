@@ -86,6 +86,7 @@
     - .NERDTreeBookmarks
     - .path
     - .tmux.conf
+    - .Xresources
     - .zshrc
 
 - name: Create Vim plug directory
