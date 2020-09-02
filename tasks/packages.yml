@@ -30,16 +30,19 @@
   vars:
     packages:
       - bzip2
+      - cifs-utils
       - containerd.io
       - cpanminus
       - ctags
       - docker-ce
       - docker-ce-cli
+      - docker-compose
       - fzf
       - git
       - git-extras
       - glib
       - golang
+      - grubby
       - htop
       - hub
       - i3
@@ -48,6 +51,7 @@
       - iproute
       - iputils
       - kubernetes-client
+      - lcms2-devel
       - man
       - mercurial
       - neovim
@@ -96,6 +100,7 @@
     - App::cpanminus
     - Carton
     - Log::Log4perl
+    - Mojolicious
     - Perl::Critic
     - Perl::Critic::Policy::Freenode::PackageMatchesFilename
     - Perl::Critic::Policy::Documentation::RequirePodLinksIncludeText
