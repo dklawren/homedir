@@ -1,5 +1,4 @@
 export PATH="$PATH:/opt/local/bin:$HOME/.local/bin:$HOME/bin:$HOME/devel/bin"
 export PATH="$PATH:/usr/local/sbin:/usr/local/go/bin"
-export PATH="$PATH:$HOME/.mozbuild/git-cinnabar:$HOME/.mozbuild/arcanist/bin:$HOME/.mozbuild/moz-phab"
+export PATH="$PATH:$HOME/.mozbuild/moz-phab"
 export MANPATH="/usr/local/man:$MANPATH"
-export PATH="$PATH:/home/dkl/local-devel/pebble-dev/pebble-sdk-4.5-linux64/bin"

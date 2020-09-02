@@ -23,10 +23,6 @@ alias vi='nvim'
 alias tmux="tmux -2"
 alias dmux="ssh -t docker tmux new -A"
 
-# Arcanist, Cinnabarc
-alias arc="$HOME/.mozbuild/arcanist/bin/arc"
-alias cinnabarc="$HOME/.mozbuild/cinnabarc/bin/arc"
-
 # Bazaar
 alias bdiff='bzr diff'
 alias bstat='bzr status -S | grep -v ^\?'
