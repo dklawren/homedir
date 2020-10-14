@@ -1,45 +1,25 @@
-- name: Create /home/dkl/.mozbuild/moz-phab
-  file:
-    dest: /home/dkl/.mozbuild/moz-phab
-    mode: 0755
-    owner: dkl
-    group: dkl
-    state: directory
-
-- name: Checkout moz-phab code review wrapper
-  get_url:
-    url: https://raw.githubusercontent.com/mozilla-conduit/review/a35696157c060cbc7a5a600f4d033f07b6c18da9/moz-phab
-    dest: /home/dkl/.mozbuild/moz-phab/moz-phab
-    mode: 0755
-    owner: dkl
-    group: dkl
+- name: Install moz-phab code review wrapper
+  pip: name=mozphab
 
 - name: Git checkout tmux plugin support
   git:
     repo: https://github.com/tmux-plugins/tpm
     dest: /home/dkl/.tmux/plugins/tpm
-  become_user: dkl
 
 - name: Remove previous oh-my-zsh
   file:
     dest: /home/dkl/.oh-my-zsh
     state: absent
 
-- name: Download oh-my-zsh
-  get_url:
-    url: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
-    dest: /tmp/omzinstall.sh
-    mode: '0755'
-
-- name: Setup oh-my-zsh
-  command: /tmp/omzinstall.sh
-  become_user: dkl
+- name: Install oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: /home/dkl/.oh-my-zsh
 
 - name: Install Spaceship ZSH Theme
   git:
     repo: https://github.com/denysdovhan/spaceship-prompt.git
     dest: /home/dkl/.oh-my-zsh/custom/themes/spaceship-prompt
-  become_user: dkl
 
 - name: Create link for Spaceship ZSH Theme
   file:
@@ -75,7 +55,6 @@
     - .aliases
     - .bash_profile
     - .bashrc
-    - .config/i3
     - .config/nvim
     - .exports
     - .functions
@@ -86,7 +65,6 @@
     - .NERDTreeBookmarks
     - .path
     - .tmux.conf
-    - .Xresources
     - .zshrc
 
 - name: Create Vim plug directory
@@ -124,3 +102,6 @@
 
 - name: Chown all home dir files to dkl.dkl
   shell: chown -R dkl.dkl /home/dkl
+
+- name: Set locale
+  shell: localedef -i en_US -f UTF-8 en_US.UTF-8

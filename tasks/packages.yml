@@ -18,8 +18,8 @@
   yum_repository:
       name: docker-ce
       description: Docker CE Stable
-      baseurl: https://download.docker.com/linux/fedora/31/x86_64/stable
-      gpgcheck: yes
+      baseurl: https://download.docker.com/linux/fedora/32/x86_64/stable
+      gpgcheck: no
       gpgcakey: https://download.docker.com/linux/fedora/gpg
 
 - name: Install packages
@@ -30,7 +30,6 @@
   vars:
     packages:
       - bzip2
-      - cifs-utils
       - containerd.io
       - cpanminus
       - ctags
@@ -41,13 +40,10 @@
       - git
       - git-extras
       - glib
+      - glibc-locale-source
       - golang
-      - grubby
       - htop
       - hub
-      - i3
-      - i3lock
-      - i3status
       - iproute
       - iputils
       - kubernetes-client
@@ -62,7 +58,6 @@
       - php
       - php-curl
       - php-json
-      - pixman
       - procps-ng
       - pylint
       - python3
@@ -78,17 +73,18 @@
       - ruby
       - ruby-devel
       - rubygems
-      - snapd
       - sysstat
       - tar
       - tmux
       - util-linux-user
+      - wget
       - xz
+      - yarnpkg
       - zsh
 
 - name: Install docker-compose
   get_url:
-    url: https://github.com/docker/compose/releases/download/1.25.3/docker-compose-Linux-x86_64
+    url: https://github.com/docker/compose/releases/download/1.27.4/docker-compose-Linux-x86_64
     dest: /usr/local/bin/docker-compose
     mode: '0755'
 
