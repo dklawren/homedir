@@ -21,12 +21,12 @@
 		"humao.rest-client",
 		"lextudio.restructuredtext"
 	],
-	"forwardPorts": [1080],
 	"remoteUser": "dkl",
 	"containerEnv": {
 		"TERM":"xterm-256color"
 	},
 	"mounts": [
-		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind,consistency=cached"
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind,consistency=cached",
+		"source=github-repos,target=/home/dkl/github/repos/,type=volume"
 	]
 }
