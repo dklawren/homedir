@@ -2,8 +2,9 @@
 	"name": "DevBox (homedir)",
 	"build": {
 		"dockerfile": "../Dockerfile",
-		"context": "..",
+		"context": ".."
 	},
+  "workspaceFolder": "/home/dkl",
 	"extensions": [
 		"ms-vscode.azure-account",
 		"ms-azuretools.vscode-docker",

@@ -8,11 +8,12 @@
 FROM fedora:33
 
 ENV USER dkl
+ENV HOMEDIR /home/dkl/local-devel/homedir
 
 # Packages
 RUN dnf -y -q install ansible git sudo && dnf clean all
 
 # Ansible
-COPY . /home/dkl/homedir
-WORKDIR /home/dkl/homedir
-RUN cd /home/dkl/homedir && ansible-playbook local.yml
+COPY . $HOMEDIR
+WORKDIR $HOMEDIR
+RUN cd $HOMEDIR && ansible-playbook local.yml
