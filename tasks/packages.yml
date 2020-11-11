@@ -18,8 +18,8 @@
   yum_repository:
       name: docker-ce
       description: Docker CE Stable
-      baseurl: https://download.docker.com/linux/fedora/31/x86_64/stable
-      gpgcheck: yes
+      baseurl: https://download.docker.com/linux/fedora/32/x86_64/stable
+      gpgcheck: no
       gpgcakey: https://download.docker.com/linux/fedora/gpg
 
 - name: Install packages

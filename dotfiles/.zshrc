@@ -132,3 +132,5 @@ SPACESHIP_DOCKER_SHOW="false"
 eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 
 [ -z $DISPLAY  ] && export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+
+source ~/perl5/perlbrew/etc/bashrc

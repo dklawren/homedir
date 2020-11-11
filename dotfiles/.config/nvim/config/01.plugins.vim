@@ -9,7 +9,7 @@ Plug 'w0rp/ale'
 " Include
 Plug 'Shougo/neoinclude.vim'
 Plug 'jsfaint/coc-neoinclude'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 " Add or remove your plugins here like this:
 Plug 'HerringtonDarkholme/yats.vim'
