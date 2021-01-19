@@ -70,6 +70,7 @@
       - python3
       - python3-flake8
       - python3-invoke
+      - python3-ipykernel
       - python3-neovim
       - python3-pip
       - python3-rstcheck
