@@ -5,15 +5,15 @@
 # This Source Code Form is "Incompatible With Secondary Licenses", as
 # defined by the Mozilla Public License, v. 2.0.
 
-FROM fedora:30
-MAINTAINER David Lawrence <dkl@mozilla.com>
+FROM fedora:33
 
 ENV USER dkl
+ENV HOMEDIR /home/dkl/local-devel/homedir
 
 # Packages
 RUN dnf -y -q install ansible git sudo && dnf clean all
 
 # Ansible
-COPY . /ansible
-WORKDIR /ansible
-RUN cd /ansible && ansible-playbook local.yml
+COPY . $HOMEDIR
+WORKDIR $HOMEDIR
+RUN cd $HOMEDIR && ansible-playbook local.yml

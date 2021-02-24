@@ -64,7 +64,8 @@
       - php
       - php-curl
       - php-json
-      - pixman
+      - podman
+      - podman-compose
       - procps-ng
       - pylint
       - python3
@@ -84,6 +85,8 @@
       - snapd
       - sysstat
       - tar
+      - tlp
+      - tlp-rdw
       - tmux
       - util-linux-user
       - xz

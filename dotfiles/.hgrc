@@ -3,27 +3,36 @@ username = David Lawrence <dkl@mozilla.com>
 editor = vim
 merge = internal:merge3
 logtemplate = '[{phase}] {desc} ({node|short})\\n'
+tweakdefaults = true
+interface = curses
 
 [alias]
 lg = log --template "{label('custom.rev', rev)}\t{label('custom.phase',phase)}\t{label('custom.tag',tags)}\t{desc|firstline} {label('custom.age', date|age)} {label('custom.user', author|user)}\n"
 wip = log --graph --rev=wip --template=wip
 show = log -pr
+smart-annotate = annotate -w --skip ignored_changesets
 
 [extensions]
-rebase =
-color =
-pager =
-progress =
-histedit =
-strip =
-shelve =
-fetch =
+rebase = 
+progress = 
+histedit = 
+strip = 
+shelve = 
+fetch = 
+absorb = 
+evolve = /home/dkl/.mozbuild/evolve/hgext3rd/evolve
+blackbox = 
+firefoxtree = /home/dkl/.mozbuild/version-control-tools/hgext/firefoxtree
+clang-format = /home/dkl/.mozbuild/version-control-tools/hgext/clang-format
+js-format = /home/dkl/.mozbuild/version-control-tools/hgext/js-format
+push-to-try = /home/dkl/.mozbuild/version-control-tools/hgext/push-to-try
 
 [revsetalias]
-wip = (parents(not public()) or not public() or . or head()) and (not obsolete() or unstable()^) and not closed()
+wip = (parents(not public()) or not public() or . or (head() and branch(default))) and (not obsolete() or orphan()^) and not closed() and not (fxheads() - date(-90))
+ignored_changesets = desc("ignore-this-changeset") or extdata(get_ignored_changesets)
 
 [templates]
-wip = '{label("log.branch", ifeq(branch, "default", "", branch))} {label("changeset.{phase}", rev)} {label("grep.user", author|user)}{label("log.tag", if(tags," {tags}"))} {bookmarks % "{ifeq(bookmark, currentbookmark, label('log.activebookmark', bookmark), label('log.bookmark', bookmark))} "}\n{label(ifcontains(rev, revset('parents()'), 'desc.here'),desc|firstline)}'
+wip = '{label("wip.branch", if(branches,"{branches} "))}{label(ifeq(graphnode,"x","wip.obsolete","wip.{phase}"),"{rev}:{node|short}")}{label("wip.user", " {author|user}")}{label("wip.tags", if(tags," {tags}"))}{label("wip.tags", if(fxheads," {fxheads}"))}{if(bookmarks," ")}{label("wip.bookmarks", if(bookmarks,bookmarks))}{label(ifcontains(rev, revset("parents()"), "wip.here"), " {desc|firstline}")}'
 
 [color]
 mode = terminfo
@@ -43,8 +52,25 @@ changeset.public = orange bold
 changeset.secret = blue bold
 changeset.draft = brightyellow bold
 desc.here = bold blue_background
+wip.bookmarks = yellow underline
+wip.branch = yellow
+wip.draft = green
+wip.here = red
+wip.obsolete = none
+wip.public = blue
+wip.tags = yellow
+wip.user = magenta
 
 [mozilla]
 ircnick = dkl
+[diff]
+git = true
+showfunc = true
+[rebase]
+experimental.inmemory = yes
+[experimental]
+graphshorten = true
+[extdata]
+get_ignored_changesets = shell:cat `hg root`/.hg-annotate-ignore-revs 2> /dev/null || true
 
 %include ~/.hgrc.bugzilla

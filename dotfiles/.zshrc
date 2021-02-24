@@ -151,3 +151,11 @@ if [ -z "$RUNNING"  ]; then
     sudo dockerd > /dev/null 2>&1 &
     disown
 fi
+
+# Start Onedrive daemin automatically when logging in if not running.
+RUNNING=`ps aux | grep onedrive | grep -v grep`
+if [ -z "$RUNNING"  ]; then
+    onedrive --monitor > /dev/null 2>&1 &
+    disown
+fi
+
