@@ -20,3 +20,7 @@ if [ -f '/home/dkl/google-cloud-sdk/path.bash.inc' ]; then . '/home/dkl/google-c
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/dkl/google-cloud-sdk/completion.bash.inc' ]; then . '/home/dkl/google-cloud-sdk/completion.bash.inc'; fi
+
+export PATH="/home/dkl/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

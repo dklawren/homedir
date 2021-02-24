@@ -58,6 +58,8 @@
       - php
       - php-curl
       - php-json
+      - podman
+      - podman-compose
       - procps-ng
       - pylint
       - python3
@@ -75,6 +77,8 @@
       - rubygems
       - sysstat
       - tar
+      - tlp
+      - tlp-rdw
       - tmux
       - util-linux-user
       - wget
