@@ -122,5 +122,18 @@
     path: /tmp/circle-ci-cli
     state: absent
 
+- name: Download Pyenv Installer
+  get_url:
+    url: https://pyenv.run
+    dest: /tmp/pyenv.run
+
+- name: Install Pyenv
+  shell: bash /tmp/pyenv.run
+
+- name: Remove the Pyenv Installer
+  file:
+    path: /tmp/pyenv.run
+    state: absent
+
 - name: Chown all home dir files to dkl.dkl
   shell: chown -R dkl.dkl /home/dkl
