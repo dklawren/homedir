@@ -18,8 +18,8 @@
   yum_repository:
       name: docker-ce
       description: Docker CE Stable
-      baseurl: https://download.docker.com/linux/fedora/31/x86_64/stable
-      gpgcheck: yes
+      baseurl: https://download.docker.com/linux/fedora/32/x86_64/stable
+      gpgcheck: no
       gpgcakey: https://download.docker.com/linux/fedora/gpg
 
 - name: Install packages
@@ -29,6 +29,7 @@
     update_cache: yes
   vars:
     packages:
+      - bind-utils
       - bzip2
       - cifs-utils
       - containerd.io
@@ -41,6 +42,7 @@
       - git
       - git-extras
       - glib
+      - glibc-all-langpacks
       - golang
       - grubby
       - htop
@@ -68,6 +70,7 @@
       - python3
       - python3-flake8
       - python3-invoke
+      - python3-ipykernel
       - python3-neovim
       - python3-pip
       - python3-rstcheck
@@ -88,7 +91,7 @@
 
 - name: Install docker-compose
   get_url:
-    url: https://github.com/docker/compose/releases/download/1.25.3/docker-compose-Linux-x86_64
+    url: https://github.com/docker/compose/releases/download/1.27.4/docker-compose-Linux-x86_64
     dest: /usr/local/bin/docker-compose
     mode: '0755'
 
