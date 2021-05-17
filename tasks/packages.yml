@@ -18,7 +18,7 @@
   yum_repository:
       name: docker-ce
       description: Docker CE Stable
-      baseurl: https://download.docker.com/linux/fedora/32/x86_64/stable
+      baseurl: https://download.docker.com/linux/fedora/34/x86_64/stable
       gpgcheck: no
       gpgcakey: https://download.docker.com/linux/fedora/gpg
 
@@ -103,8 +103,11 @@
     name: "{{ item }}"
     notest: True
   with_items:
+    - AnyEvent
     - App::cpanminus
     - Carton
+    - common::sense
+    - Guard
     - Log::Log4perl
     - Mojolicious
     - Perl::Critic
