@@ -86,6 +86,7 @@
     - .NERDTreeBookmarks
     - .path
     - .tmux.conf
+    - .vimrc
     - .Xresources
     - .zshrc
 

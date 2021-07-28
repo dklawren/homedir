@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/home/dkl/OneDrive/Work/devel/repos/github/mozilla/review/dkl-bug-1681604/.circleci'
-let g:netrw_dirhist_3='/home/dkl/.pyenv/libexec'
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/dkl/OneDrive/Work/devel/repos/github/dklawren/course_management/templates/example'
+let g:netrw_dirhist_6='/home/dkl/OneDrive/Work/devel/repos/github/dklawren/course_management/templates'
+let g:netrw_dirhist_5='/home/dkl/OneDrive/Work/devel/repos/github/dklawren/course_management/t'
+let g:netrw_dirhist_4='/home/dkl/OneDrive/Work/devel/repos/github/mozilla/bmo/master/Bugzilla/API'
+let g:netrw_dirhist_3='/home/dkl/OneDrive/Work/devel/repos/github/mozilla/bmo/master/.git/worktrees/oauth2-client'
 let g:netrw_dirhist_2='/home/dkl/locel-devel/homedir/dotfiles/.config/nvim/config'
 let g:netrw_dirhist_1='/home/dkl/locel-devel/homedir'

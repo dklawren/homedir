@@ -19,7 +19,7 @@ alias dl="cd ~/Downloads"
 alias h="history"
 alias l.='ls -d .*'
 alias ll='ls -l'
-alias vi='nvim'
+alias vi='vim'
 alias tmux="tmux -2"
 alias dmux="ssh -t docker tmux new -A"
 
@@ -152,3 +152,7 @@ alias prikey="more ~/.ssh/id_rsa | xclip -selection clipboard | echo '=> Private
 
 # make the dir command work kinda like in windows (long format)
 alias dir='ls --color=auto --format=long'
+
+export FXJENKINSPROFILE=DeployMozAws
+alias jenkins='ssh -N jenkins-proxy & (sleep 5; firefox -P $FXJENKINSPROFILE https://deploy.mozaws.net) && sleep 5 && kill -9 $(jobs -p)'
+alias jenkins2='ssh -N jenkins-proxy & (sleep 5; firefox -P $FXJENKINSPROFILE https://ops-master.jenkinsv2.prod.mozaws.net) && sleep 5 && kill -9 $(jobs -p)'

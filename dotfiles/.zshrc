@@ -148,14 +148,23 @@ fi
 # Start Docker daemon automatically when logging in if not running.
 RUNNING=`ps aux | grep dockerd | grep -v grep`
 if [ -z "$RUNNING"  ]; then
-    sudo dockerd > /dev/null 2>&1 &
-    disown
+  sudo dockerd > /dev/null 2>&1 &
+  #dockerd-rootless.sh > /dev/null 2>&1 &
+  disown
 fi
 
-# Start Onedrive daemin automatically when logging in if not running.
-RUNNING=`ps aux | grep onedrive | grep -v grep`
+# Start Onedrive daemon automatically when logging in if not running.
+#RUNNING=`ps aux | grep onedrive | grep -v grep`
+#if [ -z "$RUNNING"  ]; then
+#  onedrive --monitor > /dev/null 2>&1 &
+#  disown
+#fi
+
+# Start Syncthing daemin automatically when logging in if not running.
+RUNNING=`ps aux | grep syncthing | grep -v grep`
 if [ -z "$RUNNING"  ]; then
-    onedrive --monitor > /dev/null 2>&1 &
-    disown
+  syncthing 2>&1 > /dev/null &
+  disown
 fi
 
+eval "$(starship init zsh)"

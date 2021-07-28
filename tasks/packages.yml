@@ -30,8 +30,10 @@
   vars:
     packages:
       - bind-utils
+      - black
       - bzip2
       - cifs-utils
+      - cmake
       - containerd.io
       - cpanminus
       - ctags
