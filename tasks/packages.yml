@@ -32,6 +32,7 @@
       - bind-utils
       - black
       - bzip2
+      - cairo-devel
       - cifs-utils
       - cmake
       - containerd.io
@@ -41,6 +42,7 @@
       - docker-ce-cli
       - docker-compose
       - fzf
+      - gd-devel
       - git
       - git-extras
       - glib
