@@ -10,11 +10,6 @@ if [ -e /etc/profile.d/vte.sh ]; then
     . /etc/profile.d/vte.sh
 fi
 
-# If perlbrew is installed
-if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
-    source ~/perl5/perlbrew/etc/bashrc
-fi
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/dkl/google-cloud-sdk/path.bash.inc' ]; then . '/home/dkl/google-cloud-sdk/path.bash.inc'; fi
 
