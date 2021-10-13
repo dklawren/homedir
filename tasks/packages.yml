@@ -63,6 +63,7 @@
       - neovim
       - nodejs
       - npm
+      - openssl-devel
       - patch
       - perl-App-cpanminus
       - php
@@ -87,6 +88,9 @@
       - ruby-devel
       - rubygems
       - snapd
+      - socat
+      - starship
+      - syncthing
       - sysstat
       - tar
       - tlp
