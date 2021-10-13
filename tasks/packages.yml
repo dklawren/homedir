@@ -97,6 +97,7 @@
       - tlp-rdw
       - tmux
       - util-linux-user
+      - vim-enhanced
       - xz
       - zsh
 
