@@ -60,7 +60,6 @@
       - lcms2-devel
       - man
       - mercurial
-      - neovim
       - nodejs
       - npm
       - openssl-devel
@@ -77,7 +76,6 @@
       - python3-flake8
       - python3-invoke
       - python3-ipykernel
-      - python3-neovim
       - python3-pip
       - python3-rstcheck
       - python3-sphinx
@@ -97,7 +95,12 @@
       - tlp-rdw
       - tmux
       - util-linux-user
+      - vim-airline
+      - vim-ale
+      - vim-ctrlp
       - vim-enhanced
+      - vim-fugitive
+      - vim-trailing-whitespace
       - xz
       - zsh
 
