@@ -70,7 +70,7 @@ ZSH_THEME="spaceship"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(cpanm docker docker-compose dnf fzf gitfast git-extras mercurial perl ssh-agent z)
 
-SPACESHIP_GIT_STATUS_SHOW=false
+#SPACESHIP_GIT_STATUS_SHOW=false
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,29 +127,29 @@ fi
 
 # Disable stuff for Spacehip prompt
 #SPACESHIP_GIT_SHOW="false"
-SPACESHIP_DOCKER_SHOW="false"
+#SPACESHIP_DOCKER_SHOW="false"
 
 eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 
-[ -z $DISPLAY  ] && export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+#[ -z $DISPLAY  ] && export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 
-if [[ -z "$XDG_RUNTIME_DIR" ]]; then
-  export XDG_RUNTIME_DIR=/run/user/$UID
-  if [[ ! -d "$XDG_RUNTIME_DIR" ]]; then
-    export XDG_RUNTIME_DIR=/tmp/$USER-runtime
-    if [[ ! -d "$XDG_RUNTIME_DIR" ]]; then
-      mkdir -m 0700 "$XDG_RUNTIME_DIR"
-    fi
-  fi
-fi
+#if [[ -z "$XDG_RUNTIME_DIR" ]]; then
+#  export XDG_RUNTIME_DIR=/run/user/$UID
+#  if [[ ! -d "$XDG_RUNTIME_DIR" ]]; then
+#    export XDG_RUNTIME_DIR=/tmp/$USER-runtime
+#    if [[ ! -d "$XDG_RUNTIME_DIR" ]]; then
+#      mkdir -m 0700 "$XDG_RUNTIME_DIR"
+#    fi
+#  fi
+#fi
 
 # Start Docker daemon automatically when logging in if not running.
-RUNNING=`ps aux | grep dockerd | grep -v grep`
-if [ -z "$RUNNING"  ]; then
-  sudo dockerd > /dev/null 2>&1 &
+#RUNNING=`ps aux | grep dockerd | grep -v grep`
+#if [ -z "$RUNNING"  ]; then
+#  sudo dockerd > /dev/null 2>&1 &
 #  dockerd-rootless.sh > /dev/null 2>&1 &
-  disown
-fi
+#  disown
+#fi
 
 # Start Onedrive daemon automatically when logging in if not running.
 #RUNNING=`ps aux | grep onedrive | grep -v grep`
@@ -159,10 +159,10 @@ fi
 #fi
 
 # Start Syncthing daemin automatically when logging in if not running.
-RUNNING=`ps aux | grep syncthing | grep -v grep`
-if [ -z "$RUNNING"  ]; then
-  syncthing 2>&1 > /dev/null &
-  disown
-fi
+#RUNNING=`ps aux | grep syncthing | grep -v grep`
+#if [ -z "$RUNNING"  ]; then
+#  syncthing 2>&1 > /dev/null &
+#  disown
+#fi
 
 eval "$(starship init zsh)"
