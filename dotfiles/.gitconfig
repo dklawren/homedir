@@ -16,7 +16,7 @@
     bare = false
     logallrefupdates = true
     ignorecase = true
-    symlinks = false
+    symlinks = true
     preloadindex = true
     commitGraph = true
 [merge]
