@@ -77,9 +77,11 @@
     - .bashrc
     - .config/i3
     - .config/nvim
+    - .ctags.d
     - .exports
     - .functions
     - .gitconfig
+    - .gitignore
     - .helpers
     - .hgrc
     - .inputrc

@@ -1,0 +1,17 @@
+--recurse=yes
+--exclude=.git
+--exclude=build/
+--exclude=.svn
+--exclude=vendor/*
+--exclude=node_modules/*
+--exclude=public/webpack/*
+--exclude=db/*
+--exclude=log/*
+--exclude=test/*
+--exclude=tests/*
+--exclude=\*.min.\*
+--exclude=\*.swp
+--exclude=\*.bak
+--exclude=\*.pyc
+--exclude=\*.class
+--exclude=\*.cache
