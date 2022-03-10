@@ -122,6 +122,7 @@
     - Guard
     - Log::Log4perl
     - Mojolicious
+    - Open::This
     - Perl::Critic
     - Perl::Critic::Policy::Freenode::PackageMatchesFilename
     - Perl::Critic::Policy::Documentation::RequirePodLinksIncludeText

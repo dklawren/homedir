@@ -69,3 +69,15 @@ nnoremap <F3> :bn<cr>
 
 " I hate entering Ex mode by accient
 map Q <Nop>
+
+nnoremap <leader>ot :call OT(input("ot: ", "", "file"))<cr>
+
+function! OT(fname)
+    let res = system("ot --editor vim --print " . shellescape(a:fname))
+    if v:shell_error
+        echo "\n" . res
+    else
+        execute "e " res
+    endif
+    call histadd(':', printf('call OT("%s")', escape(a:fname, '"\')))
+endfunction
