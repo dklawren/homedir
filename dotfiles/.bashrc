@@ -19,3 +19,4 @@ if [ -f '/home/dkl/google-cloud-sdk/completion.bash.inc' ]; then . '/home/dkl/go
 export PATH="/home/dkl/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+. "$HOME/.cargo/env"

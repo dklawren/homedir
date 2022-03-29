@@ -68,3 +68,4 @@ fi
 # sudo chown root.docker /var/run/docker.sock
 
 # cd $HOME
+. "$HOME/.cargo/env"
