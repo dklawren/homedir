@@ -40,7 +40,7 @@
       - ctags
       - docker-ce
       - docker-ce-cli
-      - docker-compose
+      - docker-compose-plugin
       - fzf
       - gd-devel
       - git
@@ -128,3 +128,4 @@
     - Perl::Critic::Policy::Documentation::RequirePodLinksIncludeText
     - Perl::LanguageServer
     - Perl::Tidy
+    - Test::Perl::Critic::Progressive
