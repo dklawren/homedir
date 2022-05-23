@@ -31,12 +31,16 @@ alias bup='bzr update'
 # Docker
 alias d=docker
 alias dx='docker exec -it'
-alias dc=docker-compose
+alias dc='docker compose'
+alias da='docker ps -q -a'
+alias dv='docker volume ls -q'
 
 # Podman
 alias pm=podman
 alias pmx='podman exec -it'
 alias pmc=podman-compose
+alias pma='podman ps -q -a'
+alias pmv='podman volume ls -q'
 
 # Git
 alias g=git
