@@ -133,4 +133,4 @@
 	  rebase = true
 	  ff = false
 [commit]
-    gpgsign = true
+    #gpgsign = true
