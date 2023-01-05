@@ -33,6 +33,7 @@
       - black
       - bzip2
       - cairo-devel
+      - cargo
       - cifs-utils
       - cmake
       - containerd.io
@@ -41,6 +42,7 @@
       - docker-ce
       - docker-ce-cli
       - docker-compose-plugin
+      - exa
       - fzf
       - gd-devel
       - git
@@ -61,8 +63,7 @@
       - lcms2-devel
       - man
       - mercurial
-      - nodejs
-      - npm
+      - neovim
       - openssl-devel
       - patch
       - perl-App-cpanminus
@@ -96,12 +97,6 @@
       - tlp-rdw
       - tmux
       - util-linux-user
-      - vim-airline
-      - vim-ale
-      - vim-ctrlp
-      - vim-enhanced
-      - vim-fugitive
-      - vim-trailing-whitespace
       - xz
       - zsh
 
@@ -130,3 +125,9 @@
     - Perl::LanguageServer
     - Perl::Tidy
     - Test::Perl::Critic::Progressive
+
+- name: Install nvm
+  ansible.builtin.shell: >
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+  args:
+    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
