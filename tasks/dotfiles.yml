@@ -77,6 +77,9 @@
     - .bashrc
     - .config/i3
     - .config/nvim
+    - .config/lvim
+    - .config/sway
+    - .config/waybar
     - .ctags.d
     - .exports
     - .functions
@@ -130,8 +133,9 @@
     url: https://pyenv.run
     dest: /tmp/pyenv.run
 
-- name: Install Pyenv
-  shell: bash /tmp/pyenv.run
+      #- name: Install Pyenv
+      #shell: bash /tmp/pyenv.run
+      #become_user: dkl
 
 - name: Remove the Pyenv Installer
   file:

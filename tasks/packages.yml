@@ -18,9 +18,13 @@
   yum_repository:
       name: docker-ce
       description: Docker CE Stable
-      baseurl: https://download.docker.com/linux/fedora/34/x86_64/stable
+      baseurl: https://download.docker.com/linux/fedora/37/x86_64/stable
       gpgcheck: no
       gpgcakey: https://download.docker.com/linux/fedora/gpg
+
+- name: Enable Fedora Copr for lazygit
+  community.general.copr:
+    name: atim/lazygit
 
 - name: Install packages
   dnf:
@@ -29,6 +33,7 @@
     update_cache: yes
   vars:
     packages:
+      - android-tools
       - bind-utils
       - black
       - bzip2
@@ -60,6 +65,7 @@
       - iputils
       - jq
       - kubernetes-client
+      - lazygit
       - lcms2-devel
       - man
       - mercurial
@@ -89,7 +95,6 @@
       - rubygems
       - snapd
       - socat
-      - starship
       - syncthing
       - sysstat
       - tar
