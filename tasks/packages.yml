@@ -58,9 +58,6 @@
       - grubby
       - htop
       - hub
-      - i3
-      - i3lock
-      - i3status
       - iproute
       - iputils
       - jq
@@ -98,9 +95,11 @@
       - syncthing
       - sysstat
       - tar
+      - teeldear
       - tlp
       - tlp-rdw
       - tmux
+      - tokei
       - util-linux-user
       - xz
       - zsh
