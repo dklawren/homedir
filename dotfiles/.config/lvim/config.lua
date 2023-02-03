@@ -178,8 +178,16 @@ require('lvim.lsp.manager').setup('perlnavigator', {
 lvim.plugins = {
     {
       "farmergreg/vim-lastplace",
+    },
+    {
       "Yggdroot/hiPairs",
     },
+    {
+      "Pocco81/auto-save.nvim",
+      config = function()
+        require("auto-save").setup()
+      end,
+    }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
