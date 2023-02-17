@@ -1,16 +1,135 @@
 {
-    "layer": "top",
+    "layer": "bottom",
+    "position": "top",
+    "height": 30,
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["battery", "clock"],
+    "modules-center": ["mpd", "custom/storage-root", "custom/storage-home"],
+    "modules-right": ["memory", "cpu", "network", "pulseaudio", "battery", "backlight", "custom/time", "clock"],
+
+    "sway/mode": {
+        "format": " {}"
+    },
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll-wraparound": true,
+        "enable-bar-scroll": true,
+        "smooth-scrolling-threshold": 30
+    },
     "sway/window": {
-        "max-length": 50
+        "max-length": 80,
+        "tooltip": false
+    },
+    "mpd": {
+        //"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})  ",
+        "format": "{stateIcon} {consumeIcon}",
+        "format-disconnected": "Disconnected",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+
+    "clock": {
+        //"format": "{:%d.%m.%y %a / W: %V}",
+        "format": "{:%d.%m.%y %a}",
+        "tooltip": false
     },
     "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": " {capacity}%",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
     },
-    "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+    "pulseaudio": {
+        "format": "{volume} {icon}",
+        "format-alt": "{volume} {icon}",
+        "format-alt-click": "click-right",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+    "custom/storage-root": {
+        "format": " {}",
+        "format-alt": " {percentage}%",
+        "format-alt-click": "click-right",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "~/.config/waybar/modules/storage-root.sh"
+    },
+    "custom/storage-home": {
+        "format": " {}",
+        "format-alt": " {percentage}%",
+        "format-alt-click": "click-right",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "~/.config/waybar/modules/storage-home.sh",
+        "on-click": "ranger"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-alt-click": "click-right",
+        //"format-icons": ["", ""],
+        //"format-icons": ["", ""],
+        "format-icons": ["", ""],
+        "on-scroll-down": "light -A 1",
+        "on-scroll-up": "light -U 1"
+    },
+    "custom/time": {
+        "format": " {}",
+        "interval": 5,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/time.sh"
+    },
+    "tray": {
+        "icon-size": 18
+    },
+    "cpu": {
+        "tooltip": false,
+        "format": " {}%"
+    },
+    "memory": {
+        "tooltip": false,
+        "format": " {}%"
+        // "format": "{used} / {total}  "
+    },
+    "network": {
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     }
 }

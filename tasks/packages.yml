@@ -67,6 +67,7 @@
       - man
       - mercurial
       - neovim
+      - onedrive
       - openssl-devel
       - patch
       - perl-App-cpanminus
@@ -86,12 +87,19 @@
       - python3-sphinx
       - python3-virtualenv
       - ripgrep
+      - rofi-wayland
       - rsync
       - ruby
       - ruby-devel
       - rubygems
       - snapd
       - socat
+      - swaylock
+      - swayidle
+      - swaybg
+      - sway-systemd
+      - sway
+      - sway-wallpapers
       - syncthing
       - sysstat
       - tar
@@ -101,6 +109,7 @@
       - tmux
       - tokei
       - util-linux-user
+      - waybar
       - xz
       - zsh
 
