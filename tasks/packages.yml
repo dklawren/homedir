@@ -50,6 +50,7 @@
       - exa
       - fzf
       - gd-devel
+      - gh
       - git
       - git-extras
       - glib
@@ -126,6 +127,7 @@
   with_items:
     - AnyEvent
     - App::cpanminus
+    - App::perlimports
     - Carton
     - common::sense
     - Guard

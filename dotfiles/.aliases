@@ -20,7 +20,7 @@ alias h="history"
 alias l.='ls -d .*'
 alias ll='exa -l -g --icons --git'
 alias llt='exa -1 --icons --tree --git-ignore'
-alias vi='lvim'
+alias vi='nvim'
 alias tmux="tmux -2"
 alias dmux="ssh -t docker tmux new -A"
 
